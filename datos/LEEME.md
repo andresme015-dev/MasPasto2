@@ -1,0 +1,4 @@
+# Datos
+
+- **`MasPasto2_resultados/`**: paquete de resultados del proyecto. Una carpeta por sesión de prueba (6 de octubre a 13 de noviembre de 2026) con los CSV crudos tal como salieron del equipo, lo que guardó la interfaz y las fotos; `derivados/` con las tablas recalculadas desde los crudos; `analisis/` con los programas que las producen. Empezar por `MasPasto2_resultados/LEEME.md`, `sesiones.md` (montaje y condiciones de cada sesión) y `diccionario_columnas.md`. Los crudos no se editan; lo descartado está en `crudos/descartados/` con su motivo en `indice_corridas.csv`.
+- **`conjunto_de_prueba/`**: entregable (e) de la propuesta. Las 57 filas que el dispositivo exportó a una memoria USB el 18 de noviembre, depuradas: 31 mediciones válidas sobre superficies reales, 12 tomas válidas sobre láminas de referencia, 10 descartadas y 4 pruebas. Libro de Excel, dos CSV y fotos. Empezar por la hoja «Léeme».

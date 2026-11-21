@@ -1,0 +1,9 @@
+modo,sensor_id,config,etiqueta,fase,pasada,rep,z_t,z_ganancia_idx,z_ganancia_x,z_t_int_ms,z_max_espectral,z_max_cuentas,z_saturado,z_vis_saturado,z_sat_analogica,z_sat_digital,z_f1_405nm,z_f2_425nm,z_fz_450nm,z_f3_475nm,z_f4_515nm,z_f5_550nm,z_fy_555nm,z_fxl_600nm,z_f6_640nm,z_f7_690nm,z_f8_745nm,z_nir_855nm,z_vis_c1,z_vis_c2,z_vis_c3,z_var_luz_ciclos,z_temp_c,z_seq,z_rssi_dbm,z_desfase_s,z_id_sensor,z_config
+saturacion,B,,ventana13_sin,0.5x,,0,1794592462.175324,0,0.5,182.37,376,12159,False,False,False,False,67,87,149,149,192,66,262,248,265,320,158,376,12599,12621,12640,0.003254,,511,-61,,B,cenit_3mm
+saturacion,B,,ventana13_sin,0.5x,,1,1794592463.174569,0,0.5,182.37,381,12553,False,False,False,False,70,89,153,153,197,69,267,252,270,330,163,381,12806,12911,13050,0.019054,,512,-61,,B,cenit_3mm
+saturacion,B,,ventana13_sin,0.5x,,2,1794592464.18809,0,0.5,182.37,422,15008,False,False,False,False,82,102,169,175,225,82,296,280,308,393,197,422,14205,14832,15600,0.098205,,513,-60,,B,cenit_3mm
+saturacion,B,,ventana13_sin,0.5x,,3,1794592465.173603,0,0.5,182.37,584,18935,False,False,False,False,100,131,224,229,295,102,399,378,411,493,246,584,19296,19680,19453,0.0199,,514,-60,,B,cenit_3mm
+saturacion,B,,ventana13_sin,0.5x,,4,1794592466.175413,0,0.5,182.37,503,16163,False,False,False,False,89,114,197,196,253,88,347,329,348,425,209,503,16702,16568,16802,0.014124,,515,-61,,B,cenit_3mm
+saturacion,B,,ventana13_sin,1x,,0,1794592469.335497,1,1.0,182.37,2179,65535,True,True,False,False,354,460,764,815,1069,384,1407,1348,1543,1945,971,2179,68143,68283,68356,,,518,-66,,B,cenit_3mm
+saturacion,B,,ventana13_sin,1x,,1,1794592470.193395,1,1.0,182.37,2320,65535,True,True,False,False,343,460,812,818,1073,371,1505,1445,1560,1893,941,2320,68331,68302,68271,,,519,-59,,B,cenit_3mm
+saturacion,B,,ventana13_sin,1x,,2,1794592471.190495,1,1.0,182.37,2407,65535,True,True,False,False,389,492,828,875,1151,428,1543,1483,1681,2179,1086,2407,68398,68512,68682,,,520,-63,,B,cenit_3mm

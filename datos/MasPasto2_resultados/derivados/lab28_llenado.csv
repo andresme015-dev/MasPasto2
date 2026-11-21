@@ -1,0 +1,4 @@
+﻿ventana_cm,irradiancia_rel,medida_f1_405nm,medida_f2_425nm,medida_fz_450nm,medida_f3_475nm,medida_f4_515nm,medida_f5_550nm,medida_fy_555nm,medida_fxl_600nm,medida_f6_640nm,medida_f7_690nm,medida_f8_745nm,medida_nir_855nm,corregida_f1_405nm,corregida_f2_425nm,corregida_fz_450nm,corregida_f3_475nm,corregida_f4_515nm,corregida_f5_550nm,corregida_fy_555nm,corregida_fxl_600nm,corregida_f6_640nm,corregida_f7_690nm,corregida_f8_745nm,corregida_nir_855nm
+15,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+20,0.8956,0.6184,0.6087,0.6553,0.6831,0.6273,0.7039,0.621,0.6436,0.6709,0.6236,0.6479,0.7071,0.6905,0.6797,0.7317,0.7627,0.7005,0.7859,0.6933,0.7187,0.7491,0.6963,0.7234,0.7895
+25,0.7961,0.4362,0.4346,0.4765,0.511,0.4565,0.5106,0.4495,0.4618,0.4857,0.4618,0.4812,0.564,0.5479,0.5459,0.5985,0.6419,0.5734,0.6414,0.5646,0.58,0.61,0.5801,0.6044,0.7084

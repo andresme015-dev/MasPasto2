@@ -1,0 +1,11 @@
+modo,sensor_id,config,etiqueta,fase,pasada,rep,z_t,z_ganancia_idx,z_ganancia_x,z_t_int_ms,z_max_espectral,z_max_cuentas,z_saturado,z_vis_saturado,z_sat_analogica,z_sat_digital,z_f1_405nm,z_f2_425nm,z_fz_450nm,z_f3_475nm,z_f4_515nm,z_f5_550nm,z_fy_555nm,z_fxl_600nm,z_f6_640nm,z_f7_690nm,z_f8_745nm,z_nir_855nm,z_vis_c1,z_vis_c2,z_vis_c3,z_var_luz_ciclos,z_temp_c,z_seq,z_rssi_dbm,z_desfase_s,z_id_sensor,z_config
+saturacion,B,,ventana13_con,0.5x,,0,1794592506.648452,0,0.5,182.37,1113,30583,False,False,False,False,124,171,303,318,425,153,609,598,669,839,433,1113,31747,31736,31747,0.000347,,554,-62,,B,cenit_3mm
+saturacion,B,,ventana13_con,0.5x,,1,1794592507.700974,0,0.5,182.37,1113,30605,False,False,False,False,124,171,303,319,426,153,609,598,670,839,434,1113,31763,31770,31765,0.00022,,555,-61,,B,cenit_3mm
+saturacion,B,,ventana13_con,0.5x,,2,1794592508.650957,0,0.5,182.37,1114,30654,False,False,False,False,124,171,303,319,426,153,610,599,670,841,434,1114,31796,31791,31821,0.000944,,556,-62,,B,cenit_3mm
+saturacion,B,,ventana13_con,0.5x,,3,1794592509.652517,0,0.5,182.37,1116,30674,False,False,False,False,124,172,304,320,427,153,611,600,671,841,434,1116,31842,31823,31812,0.000943,,557,-63,,B,cenit_3mm
+saturacion,B,,ventana13_con,0.5x,,4,1794592510.673048,0,0.5,182.37,1115,30660,False,False,False,False,124,171,304,319,426,153,610,600,670,840,434,1115,31827,31798,31795,0.001006,,558,-63,,B,cenit_3mm
+saturacion,B,,ventana13_con,1x,,0,1794592513.671364,1,1.0,182.37,2221,61290,True,True,False,False,248,343,606,637,851,306,1218,1196,1338,1674,866,2221,63618,63551,63529,,,561,-61,,B,cenit_3mm
+saturacion,B,,ventana13_con,1x,,1,1794592514.667268,1,1.0,182.37,2219,61262,True,True,False,False,248,343,606,637,851,307,1217,1196,1338,1677,867,2219,63563,63549,63590,,,562,-61,,B,cenit_3mm
+saturacion,B,,ventana13_con,1x,,2,1794592515.656425,1,1.0,182.37,2221,61353,True,True,False,False,248,343,606,638,852,307,1218,1197,1341,1679,868,2221,63613,63663,63684,,,563,-62,,B,cenit_3mm
+saturacion,B,,ventana13_con,1x,,3,1794592516.652681,1,1.0,182.37,2222,61333,True,True,False,False,248,343,607,638,852,307,1219,1198,1340,1678,867,2222,63664,63600,63620,,,564,-61,,B,cenit_3mm
+saturacion,B,,ventana13_con,1x,,4,1794592517.654381,1,1.0,182.37,2216,61157,True,True,False,False,247,341,605,635,848,305,1215,1194,1333,1666,861,2216,63481,63281,63156,,,565,-61,,B,cenit_3mm

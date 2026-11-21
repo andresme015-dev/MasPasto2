@@ -1,0 +1,8 @@
+de,a,tipo,f1_405nm,f2_425nm,fz_450nm,f3_475nm,f4_515nm,f5_550nm,fy_555nm,fxl_600nm,f6_640nm,f7_690nm,f8_745nm,nir_855nm
+ida 2x,ida 4x,cambio de ganancia,16.67,8.33,5.0,2.94,2.38,5.0,1.32,1.04,0.0,0.5,0.0,0.15
+ida 4x,ida 8x,cambio de ganancia,7.14,-3.85,-2.38,-4.29,-3.49,-4.76,-3.25,-2.58,-2.94,-3.2,-2.57,-2.75
+ida 8x,ida 16x,cambio de ganancia,-3.33,0.0,1.22,0.75,0.6,1.25,0.34,0.0,0.0,-0.24,0.0,-0.24
+ida 16x,vuelta 16x,deriva (misma ganancia),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.01,0.0,-0.01
+vuelta 16x,vuelta 8x,cambio de ganancia,3.45,0.0,-1.2,-0.74,-0.6,-1.23,-0.33,0.0,0.0,0.26,0.0,0.25
+vuelta 8x,vuelta 4x,cambio de ganancia,-6.67,4.0,2.44,4.48,3.61,5.0,3.36,2.65,2.93,3.31,2.64,2.73
+vuelta 4x,vuelta 2x,cambio de ganancia,-14.29,-7.69,-4.76,-2.86,-2.33,-4.76,-1.3,-1.03,0.1,-0.49,0.0,-0.02

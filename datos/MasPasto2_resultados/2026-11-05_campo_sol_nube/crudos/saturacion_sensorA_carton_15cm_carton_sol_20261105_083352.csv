@@ -1,0 +1,6 @@
+modo,sensor_id,config,etiqueta,fase,pasada,rep,n_t,n_ganancia_idx,n_ganancia_x,n_t_int_ms,n_max_espectral,n_max_cuentas,n_saturado,n_vis_saturado,n_sat_analogica,n_sat_digital,n_f1_405nm,n_f2_425nm,n_fz_450nm,n_f3_475nm,n_f4_515nm,n_f5_550nm,n_fy_555nm,n_fxl_600nm,n_f6_640nm,n_f7_690nm,n_f8_745nm,n_nir_855nm,n_vis_c1,n_vis_c2,n_vis_c3,n_var_luz_ciclos,n_temp_c
+saturacion,A,carton_15cm,carton_sol,0.5x,,0,1793885632.713,0,0.5,182.37,3149,65535,True,True,False,False,622,881,1281,1423,1733,696,2274,2005,1910,2635,1245,3149,69729,69728,69725,,25.68
+saturacion,A,carton_15cm,carton_sol,0.5x,,1,1793885633.31,0,0.5,182.37,3146,65535,True,True,False,False,620,879,1279,1421,1731,694,2271,2002,1908,2630,1242,3146,69725,69724,69722,,25.7
+saturacion,A,carton_15cm,carton_sol,0.5x,,2,1793885633.906,0,0.5,182.37,3142,65535,True,True,False,False,616,878,1278,1420,1730,689,2268,2000,1907,2622,1237,3142,69723,69723,69711,,25.7
+saturacion,A,carton_15cm,carton_sol,0.5x,,3,1793885634.503,0,0.5,182.37,3132,65535,True,True,False,False,612,869,1271,1409,1720,684,2257,1990,1893,2612,1231,3132,69707,69703,69698,,25.7
+saturacion,A,carton_15cm,carton_sol,0.5x,,4,1793885635.104,0,0.5,182.37,3117,65535,True,True,False,False,606,860,1265,1399,1710,677,2247,1981,1882,2599,1223,3117,69691,69683,69679,,25.7

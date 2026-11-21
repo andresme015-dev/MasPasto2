@@ -1,0 +1,13 @@
+modulo,canal,lecturas,duracion_min,cv_pct,deriva_pct,ganancias
+nadir,f1_405nm,10,0.09,1.58,2.2,16x: 10
+nadir,f2_425nm,10,0.09,2.13,4.33,16x: 10
+nadir,fz_450nm,10,0.09,2.17,4.32,16x: 10
+nadir,f3_475nm,10,0.09,1.99,3.5,16x: 10
+nadir,f4_515nm,10,0.09,2.2,4.07,16x: 10
+nadir,f5_550nm,10,0.09,1.6,1.86,16x: 10
+nadir,fy_555nm,10,0.09,2.45,4.98,16x: 10
+nadir,fxl_600nm,10,0.09,2.37,4.43,16x: 10
+nadir,f6_640nm,10,0.09,2.38,4.02,16x: 10
+nadir,f7_690nm,10,0.09,2.21,3.05,16x: 10
+nadir,f8_745nm,10,0.09,1.79,2.22,16x: 10
+nadir,nir_855nm,10,0.09,1.97,3.64,16x: 10

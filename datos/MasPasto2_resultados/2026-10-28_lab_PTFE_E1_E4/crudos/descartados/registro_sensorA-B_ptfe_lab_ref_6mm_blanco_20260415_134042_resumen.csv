@@ -1,0 +1,13 @@
+modulo,canal,lecturas,duracion_min,cv_pct,deriva_pct,ganancias
+zenit,f1_405nm,20,0.87,0.0,0.0,128x: 20
+zenit,f2_425nm,20,0.87,1.24,0.76,128x: 20
+zenit,fz_450nm,20,0.87,0.5,0.0,128x: 20
+zenit,f3_475nm,20,0.87,0.0,0.0,128x: 20
+zenit,f4_515nm,20,0.87,0.0,0.0,128x: 20
+zenit,f5_550nm,20,0.87,0.0,0.0,128x: 20
+zenit,fy_555nm,20,0.87,0.36,0.15,128x: 20
+zenit,fxl_600nm,20,0.87,0.24,0.38,128x: 20
+zenit,f6_640nm,20,0.87,0.2,0.0,128x: 20
+zenit,f7_690nm,20,0.87,0.0,0.0,128x: 20
+zenit,f8_745nm,20,0.87,0.0,0.0,128x: 20
+zenit,nir_855nm,20,0.87,0.03,0.0,128x: 20

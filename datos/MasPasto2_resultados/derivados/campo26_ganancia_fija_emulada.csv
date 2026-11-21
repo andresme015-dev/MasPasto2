@@ -1,0 +1,16 @@
+superficie,ganancia_x,f6_nadir_cuentas,f6_cenit_cuentas,lecturas_validas,ndvi_media,ndvi_desv
+pasto denso 1,64.0,106.9,963.5,30 de 30,0.652,0.001
+pasto denso 1,8.0,13.4,120.4,30 de 30,0.659,0.006
+pasto denso 1,2.0,3.3,30.1,30 de 30,0.672,0.015
+pasto denso 1,1.0,1.7,15.1,30 de 30,0.761,0.013
+pasto denso 1,0.5,0.8,7.5,30 de 30,1.0,0.0
+pasto denso 2,64.0,46.9,549.9,30 de 30,0.725,0.003
+pasto denso 2,8.0,5.9,68.7,30 de 30,0.748,0.015
+pasto denso 2,2.0,1.5,17.2,30 de 30,0.797,0.006
+pasto denso 2,1.0,0.7,8.6,30 de 30,1.0,0.0
+pasto denso 2,0.5,0.4,4.3,30 de 30,1.0,0.0
+pasto ralo,64.0,150.5,680.9,29 de 30,0.337,0.002
+pasto ralo,8.0,18.8,85.1,29 de 30,0.351,0.006
+pasto ralo,2.0,4.7,21.3,29 de 30,0.397,0.006
+pasto ralo,1.0,2.4,10.6,29 de 30,0.364,0.008
+pasto ralo,0.5,1.2,5.3,29 de 30,0.341,0.0

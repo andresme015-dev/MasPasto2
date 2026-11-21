@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MasPasto2</title>
+<style>
+:root{--verde:#1F3A2E;--verde2:#3E7A5A;--claro:#DCE7DF;--fondo:#F7F6F1;--tinta:#1E2421;--gris:#5C6B62;--linea:#D6D3C8;--alerta:#C8642E;--rojo:#B3261E}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--fondo);color:var(--tinta);font-size:16px;padding-bottom:76px}
+header{background:var(--verde);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+header h1{font-size:20px;font-weight:600}
+.etq{font-size:12px;padding:3px 8px;border-radius:10px;background:var(--alerta);color:#fff}
+main{padding:16px;max-width:640px;margin:0 auto}
+section{display:none}section.activa{display:block}
+.tarjeta{background:#fff;border-radius:10px;padding:16px;margin-bottom:14px;border:1px solid var(--linea)}
+h2{font-size:17px;margin-bottom:10px}
+p.ayuda{color:var(--gris);font-size:14px;margin-bottom:12px;line-height:1.4}
+.sensor{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-top:1px solid var(--linea);font-size:15px}
+.sensor:first-of-type{border-top:0}
+.punto{width:12px;height:12px;border-radius:50%;margin-top:4px;flex:none}
+.ok{background:var(--verde2)}.no{background:var(--rojo)}
+.sensor small{display:block;color:var(--gris);font-size:12px;word-break:break-word}
+button{font:inherit;border:0;border-radius:8px;padding:12px 16px;background:var(--verde);color:#fff;font-weight:600;width:100%;cursor:pointer}
+button.sec{background:var(--claro);color:var(--verde)}
+button:disabled{opacity:.45}
+button.grande{font-size:20px;padding:18px}
+.fila{display:flex;gap:10px;margin-top:10px}.fila>*{flex:1}
+input{font:inherit;width:100%;padding:11px;border:1px solid var(--linea);border-radius:8px;background:#fff}
+label{font-size:13px;color:var(--gris);display:block;margin:10px 0 4px}
+.estado{font-size:14px;margin-top:10px;padding:10px;border-radius:8px;background:var(--claro)}
+.estado.mal{background:#F6DED6;color:#7A2E12}
+.barra{height:8px;background:var(--claro);border-radius:4px;overflow:hidden;margin-top:12px}
+.barra div{height:100%;background:var(--verde2);width:0;transition:width .3s}
+.grande-num{font-size:44px;font-weight:700;color:var(--verde);line-height:1.1}
+.rejilla{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.dato{background:var(--fondo);border-radius:8px;padding:10px}
+.dato b{display:block;font-size:22px}
+.dato span{font-size:12px;color:var(--gris)}
+.avisos{margin-top:12px;color:#7A2E12;background:#F6DED6;border-radius:8px;padding:10px;font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:right;padding:7px 4px;border-bottom:1px solid var(--linea)}
+th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
+th{color:var(--gris);font-weight:500}
+.tabla{overflow-x:auto}
+nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--linea);display:flex;z-index:5}
+nav button{background:none;color:var(--gris);border-radius:0;padding:14px 4px;font-weight:500}
+nav button.activa{color:var(--verde);box-shadow:inset 0 3px 0 var(--verde2)}
+#aviso{position:fixed;left:12px;right:12px;bottom:84px;background:#7A2E12;color:#fff;padding:12px 14px;border-radius:8px;font-size:15px;z-index:9}
+img.foto{width:100%;border-radius:8px;margin-top:12px}
+</style>
+</head>
+<body>
+<header><h1>MasPasto2</h1><span id="simEtq" class="etq" hidden>SIMULADO</span></header>
+<main>
+
+<section id="inicio" class="activa">
+  <div class="tarjeta">
+    <h2>Sensores</h2>
+    <div id="sensores"><p class="ayuda">Conectando…</p></div>
+    <div class="fila"><button class="sec" onclick="post('/api/reconectar')">Reconectar sensores</button></div>
+  </div>
+  <div class="tarjeta">
+    <h2>Hora</h2>
+    <div id="hora" class="ayuda"></div>
+  </div>
+  <div class="tarjeta">
+    <h2>1 · Referencia blanca</h2>
+    <p class="ayuda">Pon la lámina de PTFE bajo el sensor de abajo, a la altura de trabajo y sin sombras. El módulo de arriba debe ver el cielo.</p>
+    <button id="btnBlanco" onclick="post('/api/blanco')">Tomar blanco</button>
+    <div id="blancoEstado" class="estado mal">Sin referencia blanca en esta sesión.</div>
+  </div>
+  <div class="tarjeta">
+    <h2>2 · Distancia al suelo</h2>
+    <p class="ayuda">Apunta el sensor al suelo desnudo con el bastón vertical, o escribe la distancia del LiDAR al suelo.</p>
+    <button id="btnSuelo" onclick="post('/api/suelo',{})">Medir suelo con el LiDAR</button>
+    <label for="sueloMan">O escríbela (cm)</label>
+    <div class="fila" style="margin-top:0"><input id="sueloMan" type="number" inputmode="decimal" placeholder="por ejemplo 60"><button class="sec" onclick="sueloManual()">Guardar</button></div>
+    <div id="sueloEstado" class="estado mal">Sin distancia al suelo: no se calculará la altura.</div>
+  </div>
+  <div class="tarjeta">
+    <button class="sec" onclick="nuevaSesion()">Nueva sesión (borra blanco y suelo)</button>
+  </div>
+</section>
+
+<section id="medir">
+  <div class="tarjeta">
+    <label for="punto">Punto</label>
+    <input id="punto" placeholder="P1">
+    <label for="nota">Nota (opcional)</label>
+    <input id="nota" placeholder="potrero, especie, observación">
+    <div class="fila"><button id="btnMedir" class="grande" onclick="medirAhora()">Medir</button></div>
+    <div id="medirAyuda" class="estado mal" hidden>Primero toma la referencia blanca en Inicio.</div>
+    <div id="progresoCaja" hidden><div class="barra"><div id="barra"></div></div><p id="progresoTxt" class="ayuda" style="margin-top:6px"></p></div>
+  </div>
+  <div id="resultado" class="tarjeta" hidden>
+    <span style="font-size:13px;color:var(--gris)">Biomasa estimada</span>
+    <div class="grande-num" id="rBiomasa">—</div>
+    <span style="font-size:13px;color:var(--gris)">kg MS/ha</span>
+    <div class="rejilla">
+      <div class="dato"><b id="rNdvi">—</b><span>NDVI</span></div>
+      <div class="dato"><b id="rNdre">—</b><span>NDRE₂ (745/690)</span></div>
+      <div class="dato"><b id="rAltura">—</b><span>Altura (cm)</span></div>
+      <div class="dato"><b id="rInc">—</b><span>Inclinación (°)</span></div>
+      <div class="dato"><b id="rTemp">—</b><span>Temperatura (°C)</span></div>
+      <div class="dato"><b id="rPares">—</b><span>Lecturas válidas</span></div>
+      <div class="dato"><b id="rDist">—</b><span>Distancia LiDAR (cm); suelo <i id="rSuelo">—</i></span></div>
+      <div class="dato"><b id="rGan">—</b><span>Ganancia nadir / cenit</span></div>
+    </div>
+    <div id="rAvisos" class="avisos" hidden></div>
+    <img id="rFoto" class="foto" hidden alt="Foto de la medición">
+  </div>
+</section>
+
+<section id="datos">
+  <div class="tarjeta">
+    <h2 id="datosTitulo">Mediciones</h2>
+    <div class="fila" style="margin-top:0">
+      <button onclick="location.href='/api/exportar'">Descargar CSV</button>
+      <button id="btnUsb" class="sec" onclick="usb()">Copiar a USB</button>
+    </div>
+    <div id="usbEstado" class="estado" hidden></div>
+  </div>
+  <div class="tarjeta tabla">
+    <table><thead><tr><th>#</th><th>Punto</th><th>NDVI</th><th>NDRE₂</th><th>Alt.</th><th>kg/ha</th><th></th></tr></thead>
+    <tbody id="tablaCuerpo"></tbody></table>
+  </div>
+</section>
+</main>
+
+<div id="aviso" hidden></div>
+<nav>
+  <button class="activa" data-p="inicio">Inicio</button>
+  <button data-p="medir">Medir</button>
+  <button data-p="datos">Datos</button>
+</nav>
+
+<script>
+let estado = null, ultimoTrabajo = 0, sondeo = null;
+const $ = id => document.getElementById(id);
+const f = (v, d = 3) => (v === null || v === undefined || v === "" || isNaN(+v)) ? "—" : (+v).toFixed(d).replace(".", ",");
+
+document.querySelectorAll("nav button").forEach(b => b.onclick = () => {
+  document.querySelectorAll("nav button").forEach(x => x.classList.toggle("activa", x === b));
+  document.querySelectorAll("section").forEach(s => s.classList.toggle("activa", s.id === b.dataset.p));
+  if (b.dataset.p === "datos") cargarDatos();
+});
+
+async function post(url, cuerpo) {
+  try {
+    const r = await fetch(url, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(cuerpo || {})});
+    const j = await r.json();
+    if (!r.ok) { alerta(j.error || "Error"); return null; }
+    vigilar();
+    return j;
+  } catch (e) { alerta("Sin conexión con la Raspberry Pi"); return null; }
+}
+function alerta(t) { const a = $("aviso"); a.textContent = t; a.hidden = false; clearTimeout(a._t); a._t = setTimeout(() => a.hidden = true, 7000); }
+
+async function actualizar() {
+  try { estado = await (await fetch("/api/estado")).json(); } catch (e) { return; }
+  $("simEtq").hidden = !estado.simulado;
+  const nombres = {nadir: "Espectrómetro de abajo (nadir)", cenit: "Espectrómetro de arriba (cenit)", lidar: "LiDAR (altura)",
+                   inclinometro: "Inclinómetro (MPU-6050)", temperatura: "Temperatura (BMP280)", reloj: "Reloj (DS3231)", camara: "Cámara", modelo: "Modelo de biomasa"};
+  $("sensores").innerHTML = Object.entries(estado.sensores).map(([k, s]) =>
+    `<div class="sensor"><span class="punto ${s.ok ? "ok" : "no"}"></span><div>${nombres[k] || k}<small>${s.detalle}</small></div></div>`).join("");
+  const hr = new Date(estado.hora_rpi), hc = new Date(), dif = Math.round((hc - hr) / 60000);
+  $("hora").innerHTML = `Raspberry Pi: ${hr.toLocaleString("es-CO")}<br>Celular: ${hc.toLocaleString("es-CO")}` +
+    (Math.abs(dif) > 2 ? `<br><b style="color:var(--alerta)">Difieren ${dif} min: cada medición guarda también la hora del celular.</b>` : "");
+  const b = estado.blanco, be = $("blancoEstado");
+  be.className = "estado" + (b && b.edad_min <= 30 ? "" : " mal");
+  be.textContent = b ? `Blanco de las ${b.hora.slice(11, 16)} (hace ${Math.round(b.edad_min)} min), ${b.pares} lecturas, CV del NIR ${f(b.cv_nir_pct, 2)} %` + (b.con_cenit ? "" : ", SIN cenit") +
+    (b.edad_min > 30 ? ". Conviene repetirlo." : ".") : "Sin referencia blanca en esta sesión.";
+  const se = $("sueloEstado");
+  const hoy = (estado.hora_rpi || "").slice(0, 10), sueloHoy = (estado.suelo_hora || "").slice(0, 10) === hoy;
+  se.className = "estado" + (estado.suelo_cm != null && sueloHoy ? "" : " mal");
+  se.textContent = estado.suelo_cm == null ? "Sin distancia al suelo: no se calculará la altura." :
+    `Suelo a ${f(estado.suelo_cm, 1)} cm${estado.suelo_manual ? " (escrito a mano)" : " (medido)"}` +
+    (sueloHoy ? ` a las ${estado.suelo_hora.slice(11, 16)}.` : ". Es de otro día: mídelo de nuevo.");
+  const t = estado.trabajo;
+  ["btnBlanco", "btnSuelo", "btnMedir"].forEach(id => $(id).disabled = t.activo);
+  if (!b) $("btnMedir").disabled = true;
+  $("medirAyuda").hidden = !!b;
+  $("btnUsb").disabled = !estado.usb.length;
+  $("btnUsb").textContent = estado.usb.length ? "Copiar a USB" : "Sin memoria USB";
+  if (t.activo) vigilar();
+}
+
+function vigilar() {
+  if (sondeo) return;
+  $("progresoCaja").hidden = false;
+  sondeo = setInterval(async () => {
+    let t; try { t = await (await fetch("/api/trabajo")).json(); } catch (e) { return; }
+    $("barra").style.width = (t.progreso * 100) + "%";
+    $("progresoTxt").textContent = t.texto;
+    if (!t.activo) {
+      clearInterval(sondeo); sondeo = null;
+      setTimeout(() => $("progresoCaja").hidden = true, 800);
+      if (t.n !== ultimoTrabajo) {
+        ultimoTrabajo = t.n;
+        if (t.error) alerta(t.error);
+        else if (t.tipo === "medir") { mostrar(t.resultado); cargarDatos(); }
+      }
+      actualizar();
+    }
+  }, 500);
+}
+
+function medirAhora() {
+  const punto = $("punto").value.trim() || $("punto").placeholder;
+  post("/api/medir", {punto, nota: $("nota").value.trim(), hora_celular: new Date().toISOString()});
+}
+
+function mostrar(r) {
+  $("resultado").hidden = false;
+  $("rBiomasa").textContent = r.biomasa_kg_ms_ha !== null && r.biomasa_kg_ms_ha !== undefined && r.biomasa_kg_ms_ha !== "" ? Math.round(r.biomasa_kg_ms_ha) : "—";
+  $("rNdvi").textContent = f(r.ndvi); $("rNdre").textContent = f(r.ndre2);
+  $("rAltura").textContent = f(r.altura_cm, 1); $("rInc").textContent = f(r.inclinacion_deg, 1);
+  $("rTemp").textContent = f(r.temp_c, 1); $("rPares").textContent = `${r.pares_validos} de ${r.pares_pedidos}`;
+  $("rDist").textContent = f(r.distancia_lidar_cm, 1); $("rSuelo").textContent = f(r.suelo_cm, 1);
+  $("rGan").textContent = (r.ganancia_nadir || "—") + "× / " + (r.ganancia_cenit || "—") + "×";
+  $("rAvisos").hidden = !r.avisos; $("rAvisos").textContent = "Avisos: " + r.avisos;
+  $("rFoto").hidden = !r.foto; if (r.foto) $("rFoto").src = "/fotos/" + r.foto + "?t=" + Date.now();
+  const m = /^(.*?)(\d+)$/.exec(r.punto || "");
+  $("punto").value = ""; $("punto").placeholder = m ? m[1] + (+m[2] + 1) : "P" + (r.id + 1);
+  $("nota").value = "";
+}
+
+async function cargarDatos() {
+  let filas; try { filas = await (await fetch("/api/mediciones")).json(); } catch (e) { return; }
+  $("datosTitulo").textContent = `Mediciones (${filas.length})`;
+  $("tablaCuerpo").innerHTML = filas.slice().reverse().map(r =>
+    `<tr><td>${r.id}</td><td>${r.punto || ""}</td><td>${f(r.ndvi)}</td><td>${f(r.ndre2)}</td><td>${f(r.altura_cm, 1)}</td>` +
+    `<td>${r.biomasa_kg_ms_ha ? Math.round(r.biomasa_kg_ms_ha) : "—"}</td><td title="${r.avisos || ""}">${r.avisos ? "⚠" : ""}</td></tr>`).join("");
+}
+
+function sueloManual() {
+  const v = parseFloat($("sueloMan").value);
+  if (!(v > 0)) return alerta("Escribe la distancia en centímetros.");
+  post("/api/suelo", {manual_cm: v});
+}
+async function nuevaSesion() {
+  if (!confirm("¿Borrar la referencia blanca y la distancia al suelo?")) return;
+  await post("/api/sesion_nueva"); actualizar();
+}
+async function usb() {
+  const j = await post("/api/usb"), e = $("usbEstado");
+  if (j) { e.hidden = false; e.className = "estado"; e.textContent = "Copiados " + j.archivos + " archivos en " + j.destino + ". Antes de sacar la memoria: sudo umount en la terminal."; }
+}
+
+actualizar(); setInterval(actualizar, 4000);
+</script>
+</body>
+</html>

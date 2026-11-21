@@ -1,0 +1,16 @@
+modo,sensor_id,config,etiqueta,fase,pasada,rep,z_t,z_ganancia_idx,z_ganancia_x,z_t_int_ms,z_max_espectral,z_max_cuentas,z_saturado,z_vis_saturado,z_sat_analogica,z_sat_digital,z_f1_405nm,z_f2_425nm,z_fz_450nm,z_f3_475nm,z_f4_515nm,z_f5_550nm,z_fy_555nm,z_fxl_600nm,z_f6_640nm,z_f7_690nm,z_f8_745nm,z_nir_855nm,z_vis_c1,z_vis_c2,z_vis_c3,z_var_luz_ciclos,z_temp_c,z_seq,z_rssi_dbm,z_desfase_s,z_id_sensor,z_config
+saturacion,B,,mediodia_con,0.5x,,0,1794433562.972476,0,0.5,182.37,117,2609,False,False,False,False,7,11,20,23,31,11,44,44,54,70,40,117,2704,2704,2702,0.00074,,262,-49,,B,cenit_3mm
+saturacion,B,,mediodia_con,0.5x,,1,1794433563.981353,0,0.5,182.37,118,2653,False,False,False,False,8,11,20,23,31,11,45,45,55,72,41,118,2735,2745,2750,0.005484,,263,-49,,B,cenit_3mm
+saturacion,B,,mediodia_con,0.5x,,2,1794433564.972587,0,0.5,182.37,119,2656,False,False,False,False,8,11,20,23,31,11,45,45,55,71,40,119,2753,2749,2737,0.005846,,264,-50,,B,cenit_3mm
+saturacion,B,,mediodia_con,0.5x,,3,1794433565.973241,0,0.5,182.37,119,2654,False,False,False,False,8,11,20,23,31,11,45,45,55,71,39,119,2742,2751,2741,0.003648,,265,-52,,B,cenit_3mm
+saturacion,B,,mediodia_con,0.5x,,4,1794433566.991925,0,0.5,182.37,117,2639,False,False,False,False,8,11,20,23,31,11,44,44,54,71,40,117,2703,2721,2735,0.011839,,266,-51,,B,cenit_3mm
+saturacion,B,,mediodia_con,1x,,0,1794433569.969766,1,1.0,182.37,244,5457,False,False,False,False,16,24,42,49,65,24,93,93,114,148,84,244,5624,5656,5650,0.00569,,269,-50,,B,cenit_3mm
+saturacion,B,,mediodia_con,1x,,1,1794433570.976939,1,1.0,182.37,241,5352,False,False,False,False,16,23,42,48,64,23,92,92,112,145,82,241,5547,5547,5548,0.00018,,270,-51,,B,cenit_3mm
+saturacion,B,,mediodia_con,1x,,2,1794433571.972563,1,1.0,182.37,241,5404,False,False,False,False,16,23,42,48,64,23,92,92,112,147,83,241,5550,5576,5601,0.009189,,271,-49,,B,cenit_3mm
+saturacion,B,,mediodia_con,1x,,3,1794433572.971051,1,1.0,182.37,237,5265,False,False,False,False,15,23,41,47,62,23,90,90,109,141,80,237,5457,5408,5380,0.014312,,272,-52,,B,cenit_3mm
+saturacion,B,,mediodia_con,1x,,4,1794433573.991652,1,1.0,182.37,244,5585,False,False,False,False,16,24,42,49,65,24,93,93,115,152,86,244,5626,5704,5789,0.028973,,273,-50,,B,cenit_3mm
+saturacion,B,,mediodia_con,2x,,0,1794433576.97051,2,2.0,182.37,554,12358,False,False,False,False,36,53,94,109,146,54,211,211,260,337,190,554,12756,12809,12764,0.004155,,276,-47,,B,cenit_3mm
+saturacion,B,,mediodia_con,2x,,1,1794433577.970656,2,2.0,182.37,541,12008,False,False,False,False,34,51,92,105,140,51,206,206,248,318,180,541,12446,12264,12077,0.030554,,277,-46,,B,cenit_3mm
+saturacion,B,,mediodia_con,2x,,2,1794433578.970002,2,2.0,182.37,516,11457,False,False,False,False,34,49,89,102,136,50,196,197,240,313,177,516,11867,11849,11875,0.002194,,278,-47,,B,cenit_3mm
+saturacion,B,,mediodia_con,2x,,3,1794433579.97856,2,2.0,182.37,523,11608,False,False,False,False,34,50,90,103,138,51,199,199,243,316,179,523,12032,12012,12009,0.001915,,279,-47,,B,cenit_3mm
+saturacion,B,,mediodia_con,2x,,4,1794433580.981598,2,2.0,182.37,501,11243,False,False,False,False,33,48,86,99,132,49,190,191,232,306,174,501,11514,11489,11653,0.014275,,280,-50,,B,cenit_3mm

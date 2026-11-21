@@ -1,0 +1,11 @@
+modo,sensor_id,config,etiqueta,fase,pasada,rep,n_t,n_ganancia_idx,n_ganancia_x,n_t_int_ms,n_max_espectral,n_max_cuentas,n_saturado,n_vis_saturado,n_sat_analogica,n_sat_digital,n_f1_405nm,n_f2_425nm,n_fz_450nm,n_f3_475nm,n_f4_515nm,n_f5_550nm,n_fy_555nm,n_fxl_600nm,n_f6_640nm,n_f7_690nm,n_f8_745nm,n_nir_855nm,n_vis_c1,n_vis_c2,n_vis_c3,n_var_luz_ciclos,n_temp_c
+registro,A,validacion,val_pasto1,,,0,1793048132.218,2,2.0,182.37,3890,36013,False,False,False,False,57,81,120,216,293,142,447,406,325,641,1119,3890,37383,37312,37222,0.004325,
+registro,A,validacion,val_pasto1,,,1,1793048132.794,2,2.0,182.37,3861,35720,False,False,False,False,56,81,120,214,290,140,444,403,321,633,1105,3861,37080,36928,36757,0.008787,
+registro,A,validacion,val_pasto1,,,2,1793048133.371,2,2.0,182.37,3804,35205,False,False,False,False,55,79,118,211,286,138,438,397,317,622,1085,3804,36546,36355,36114,0.011962,
+registro,A,validacion,val_pasto1,,,3,1793048133.949,2,2.0,182.37,3717,34451,False,False,False,False,54,78,116,206,279,135,429,389,309,606,1056,3717,35762,35499,35185,0.016399,
+registro,A,validacion,val_pasto1,,,4,1793048134.526,2,2.0,182.37,3605,33483,False,False,False,False,52,76,113,200,271,131,418,379,300,586,1021,3605,34757,34399,34034,0.021243,
+registro,A,validacion,val_pasto1,,,5,1793048135.104,2,2.0,182.37,3474,32358,False,False,False,False,51,73,109,193,263,126,404,367,290,566,985,3474,33588,33230,32850,0.022466,
+registro,A,validacion,val_pasto1,,,6,1793048135.681,2,2.0,182.37,3342,31219,False,False,False,False,49,71,106,187,254,122,391,354,280,545,948,3342,32406,32026,31630,0.024534,
+registro,A,validacion,val_pasto1,,,7,1793048136.257,2,2.0,182.37,3209,30008,False,False,False,False,47,68,102,180,245,117,377,341,269,522,909,3209,31151,30733,30310,0.027747,
+registro,A,validacion,val_pasto1,,,8,1793048136.832,2,2.0,182.37,3072,28768,False,False,False,False,45,66,99,173,236,113,363,328,258,502,874,3072,29865,29499,29167,0.023931,
+registro,A,validacion,val_pasto1,,,9,1793048137.408,2,2.0,182.37,2960,27782,False,False,False,False,44,64,96,168,229,110,351,317,250,488,848,2960,28841,28585,28347,0.017427,

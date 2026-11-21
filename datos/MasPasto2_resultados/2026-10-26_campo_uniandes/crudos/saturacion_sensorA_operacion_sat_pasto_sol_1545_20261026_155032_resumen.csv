@@ -1,0 +1,5 @@
+modulo,sensor,ganancia_x,max_pct_media,max_pct_max,saturadas,lecturas,vis_saturado,s_nir,s_f8,s_f7,s_f6,temp_c
+nadir,A,0.5,17.4,17.6,0,5,0,13.107,3.8033,2.2767,1.1756,
+nadir,A,1.0,32.4,33.2,0,5,0,12.196,3.5412,2.1232,1.1022,
+nadir,A,2.0,60.2,61.7,0,5,0,11.273,3.2834,1.9702,1.0243,
+nadir,A,4.0,100.0,100.0,5,5,5,nan,nan,nan,nan,

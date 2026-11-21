@@ -1,0 +1,11 @@
+modo,sensor_id,config,etiqueta,fase,pasada,rep,n_t,n_ganancia_idx,n_ganancia_x,n_t_int_ms,n_max_espectral,n_max_cuentas,n_saturado,n_vis_saturado,n_sat_analogica,n_sat_digital,n_f1_405nm,n_f2_425nm,n_fz_450nm,n_f3_475nm,n_f4_515nm,n_f5_550nm,n_fy_555nm,n_fxl_600nm,n_f6_640nm,n_f7_690nm,n_f8_745nm,n_nir_855nm,n_vis_c1,n_vis_c2,n_vis_c3,n_var_luz_ciclos,n_temp_c
+registro,A,validacion,val_pasto_ralo,,,0,1793048350.142,6,32.0,182.37,3125,42570,False,False,False,False,117,157,248,335,449,174,665,675,698,1114,854,3125,44014,44170,44251,0.005385,
+registro,A,validacion,val_pasto_ralo,,,1,1793048350.72,6,32.0,182.37,3133,42594,False,False,False,False,117,157,250,335,449,174,670,680,700,1113,854,3133,44275,44257,44202,0.001652,
+registro,A,validacion,val_pasto_ralo,,,2,1793048351.297,6,32.0,182.37,3124,42704,False,False,False,False,117,157,251,336,450,175,673,682,702,1115,854,3124,44337,44390,44379,0.001195,
+registro,A,validacion,val_pasto_ralo,,,3,1793048351.874,6,32.0,182.37,3121,42656,False,False,False,False,117,157,251,336,449,175,672,681,701,1115,852,3121,44308,44330,44342,0.000767,
+registro,A,validacion,val_pasto_ralo,,,4,1793048352.447,6,32.0,182.37,3120,42654,False,False,False,False,117,158,251,337,451,175,672,681,701,1116,853,3120,44328,44340,44335,0.000271,
+registro,A,validacion,val_pasto_ralo,,,5,1793048353.025,6,32.0,182.37,3120,42648,False,False,False,False,117,157,251,336,450,174,672,681,701,1115,853,3120,44321,44333,44330,0.000271,
+registro,A,validacion,val_pasto_ralo,,,6,1793048353.602,6,32.0,182.37,3120,42682,False,False,False,False,117,157,251,336,450,175,673,681,701,1117,853,3120,44346,44350,44369,0.000519,
+registro,A,validacion,val_pasto_ralo,,,7,1793048354.18,6,32.0,182.37,3125,42729,False,False,False,False,117,157,251,337,450,175,674,683,702,1118,854,3125,44406,44410,44417,0.000248,
+registro,A,validacion,val_pasto_ralo,,,8,1793048354.756,6,32.0,182.37,3125,42743,False,False,False,False,117,158,251,337,450,175,674,682,703,1118,854,3125,44426,44426,44432,0.000135,
+registro,A,validacion,val_pasto_ralo,,,9,1793048355.334,6,32.0,182.37,3127,42779,False,False,False,False,117,158,252,337,451,175,674,683,703,1119,855,3127,44446,44460,44469,0.000517,

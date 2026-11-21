@@ -1,0 +1,16 @@
+# Librerías de Python del módulo nadir, con las versiones instaladas en la Raspberry Pi del prototipo
+# (Ubuntu 26.04 LTS, Raspberry Pi 4). Obtenidas con "python3 -m pip freeze" el 20 nov 2026.
+adafruit-circuitpython-as7343==1.0.3   # AS7343 (test_as7343.py)
+Adafruit-Blinka==9.2.0                 # capa "board" de Adafruit para la Raspberry Pi
+rpi-lgpio==0.6
+smbus2==0.6.1                          # BMP280, MPU-6050, DS3231
+RPi.bme280==0.2.4
+pyserial==3.5                          # LiDAR TF-Nova
+picamera2==0.3.23                      # cámara OV5647
+joblib==1.5.2                          # modelo de biomasa
+numpy==2.3.5
+pandas==2.3.3
+scikit-learn==1.7.2
+scipy==1.16.3
+# servidor.py e interfaz.html solo usan la librería estándar de Python.
+# Los programas de análisis (datos/MasPasto2_resultados/analisis) usan además matplotlib y openpyxl.

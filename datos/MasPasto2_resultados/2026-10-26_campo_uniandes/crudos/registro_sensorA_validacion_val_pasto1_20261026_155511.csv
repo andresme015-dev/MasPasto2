@@ -1,0 +1,11 @@
+modo,sensor_id,config,etiqueta,fase,pasada,rep,n_t,n_ganancia_idx,n_ganancia_x,n_t_int_ms,n_max_espectral,n_max_cuentas,n_saturado,n_vis_saturado,n_sat_analogica,n_sat_digital,n_f1_405nm,n_f2_425nm,n_fz_450nm,n_f3_475nm,n_f4_515nm,n_f5_550nm,n_fy_555nm,n_fxl_600nm,n_f6_640nm,n_f7_690nm,n_f8_745nm,n_nir_855nm,n_vis_c1,n_vis_c2,n_vis_c3,n_var_luz_ciclos,n_temp_c
+registro,A,validacion,val_pasto1,,,0,1793048111.493,3,4.0,182.37,5447,51906,False,False,False,False,84,121,179,315,430,208,651,588,471,926,1603,5447,53610,53715,53870,0.00485,
+registro,A,validacion,val_pasto1,,,1,1793048112.069,3,4.0,182.37,5490,52307,False,False,False,False,85,122,180,317,432,210,656,592,475,933,1617,5490,53999,54133,54290,0.005389,
+registro,A,validacion,val_pasto1,,,2,1793048112.646,3,4.0,182.37,5570,52918,False,False,False,False,86,123,182,321,438,213,663,597,478,944,1638,5570,54465,54652,54926,0.008464,
+registro,A,validacion,val_pasto1,,,3,1793048113.223,3,4.0,182.37,5620,53733,False,False,False,False,87,124,184,323,443,216,670,605,486,957,1661,5620,55267,55510,55762,0.008957,
+registro,A,validacion,val_pasto1,,,4,1793048113.798,3,4.0,182.37,5715,54577,False,False,False,False,88,126,186,329,449,219,680,614,493,973,1690,5715,56048,56331,56647,0.010687,
+registro,A,validacion,val_pasto1,,,5,1793048114.375,3,4.0,182.37,5823,55633,False,False,False,False,90,128,189,334,457,223,692,625,503,992,1719,5823,57019,57396,57732,0.012505,
+registro,A,validacion,val_pasto1,,,6,1793048114.953,3,4.0,182.37,5927,56667,False,False,False,False,91,130,192,341,465,227,704,636,512,1010,1753,5927,58105,58465,58810,0.012133,
+registro,A,validacion,val_pasto1,,,7,1793048115.527,3,4.0,182.37,6049,57601,False,False,False,False,93,132,195,347,474,231,716,647,518,1028,1785,6049,59147,59399,59788,0.010837,
+registro,A,validacion,val_pasto1,,,8,1793048116.105,3,4.0,182.37,6178,58688,False,False,False,False,95,134,198,353,483,235,729,658,528,1047,1820,6178,60167,60519,60919,0.012499,
+registro,A,validacion,val_pasto1,,,9,1793048117.255,2,2.0,182.37,3213,30251,False,False,False,False,49,69,102,183,250,121,378,341,273,542,946,3213,31111,31279,31414,0.009739,

@@ -1,0 +1,12 @@
+MasPasto2 - Conjunto de prueba de mediciones reales (entregable e de la propuesta)
+Andres Felipe Mendez Martinez - Proyecto de grado, Ingenieria Electronica, Universidad de los Andes
+
+MasPasto2_conjunto_de_prueba.xlsx   libro principal (empiece por la hoja "Leeme")
+conjunto_de_prueba.csv              31 mediciones validas sobre superficies reales (texto, UTF-8)
+registro_completo.csv               las 57 filas que exporto el dispositivo, con estado y motivo
+fotos/camara_dispositivo/           fotos de la camara del dispositivo, nombradas con el ID del registro (R##)
+fotos/celular_huellas/              fotos de las huellas del 10 nov tomadas con el celular
+
+Origen: CSV consolidado copiado por la interfaz a una memoria USB el 18 nov 2026.
+Conteo: 31 validas sobre superficies reales, 12 validas sobre laminas de referencia,
+10 descartadas y 4 pruebas.

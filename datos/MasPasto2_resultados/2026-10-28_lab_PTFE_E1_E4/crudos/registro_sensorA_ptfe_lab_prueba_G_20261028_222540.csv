@@ -1,0 +1,4 @@
+modo,sensor_id,config,etiqueta,fase,pasada,rep,n_t,n_ganancia_idx,n_ganancia_x,n_t_int_ms,n_max_espectral,n_max_cuentas,n_saturado,n_vis_saturado,n_sat_analogica,n_sat_digital,n_f1_405nm,n_f2_425nm,n_fz_450nm,n_f3_475nm,n_f4_515nm,n_f5_550nm,n_fy_555nm,n_fxl_600nm,n_f6_640nm,n_f7_690nm,n_f8_745nm,n_nir_855nm,n_vis_c1,n_vis_c2,n_vis_c3,n_var_luz_ciclos,n_temp_c
+registro,A,ptfe_lab,prueba_G,,,0,1793244340.055,4,8.0,182.37,155,2664,False,False,False,False,5,8,14,16,23,10,46,45,47,75,47,155,2762,2762,2762,0.0,24.57
+registro,A,ptfe_lab,prueba_G,,,1,1793244340.652,4,8.0,182.37,155,2664,False,False,False,False,5,8,14,16,23,10,46,45,47,75,47,155,2762,2762,2762,0.0,24.58
+registro,A,ptfe_lab,prueba_G,,,2,1793244341.249,4,8.0,182.37,155,2664,False,False,False,False,5,8,14,16,23,10,46,45,47,75,47,155,2762,2762,2762,0.0,24.59

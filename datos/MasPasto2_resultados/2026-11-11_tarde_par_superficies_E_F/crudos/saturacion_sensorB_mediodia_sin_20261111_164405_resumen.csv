@@ -1,0 +1,4 @@
+modulo,sensor,ganancia_x,max_pct_media,max_pct_max,saturadas,lecturas,vis_saturado,s_nir,s_f8,s_f7,s_f6,temp_c
+zenit,B,0.5,4.1,4.2,0,5,0,1.3336,0.45402,0.80276,0.61194,
+zenit,B,1.0,8.0,8.3,0,5,0,1.2952,0.44415,0.77754,0.59659,
+zenit,B,2.0,14.9,15.9,0,5,0,1.2091,0.4118,0.71722,0.55382,

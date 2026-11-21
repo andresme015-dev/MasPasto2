@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+# datos que genera el equipo al medir (se exportan aparte)
+datos_espectro/
+config_medicion.json

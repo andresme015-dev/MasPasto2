@@ -1,0 +1,11 @@
+modo,sensor_id,config,etiqueta,fase,pasada,rep,z_t,z_ganancia_idx,z_ganancia_x,z_t_int_ms,z_max_espectral,z_max_cuentas,z_saturado,z_vis_saturado,z_sat_analogica,z_sat_digital,z_f1_405nm,z_f2_425nm,z_fz_450nm,z_f3_475nm,z_f4_515nm,z_f5_550nm,z_fy_555nm,z_fxl_600nm,z_f6_640nm,z_f7_690nm,z_f8_745nm,z_nir_855nm,z_vis_c1,z_vis_c2,z_vis_c3,z_var_luz_ciclos,z_temp_c,z_seq,z_rssi_dbm,z_desfase_s,z_id_sensor,z_config
+registro,B,,fuga_sin,,,0,1794370633.506305,10,512.0,182.37,2399,29360,False,False,False,False,45,60,77,135,169,75,296,355,572,876,622,2399,30361,30331,30341,0.000989,,2600,-58,,B,cenit_3mm
+registro,B,,fuga_sin,,,1,1794370634.485306,10,512.0,182.37,2400,29389,False,False,False,False,45,60,77,135,169,74,296,356,572,876,622,2400,30391,30353,30366,0.001252,,2601,-57,,B,cenit_3mm
+registro,B,,fuga_sin,,,2,1794370635.503742,10,512.0,182.37,2400,29385,False,False,False,False,45,60,77,135,169,75,297,355,571,876,622,2400,30385,30352,30358,0.001087,,2602,-56,,B,cenit_3mm
+registro,B,,fuga_sin,,,3,1794370636.519878,10,512.0,182.37,2401,29383,False,False,False,False,45,60,77,136,170,75,296,356,573,876,622,2401,30383,30360,30368,0.000758,,2603,-57,,B,cenit_3mm
+registro,B,,fuga_sin,,,4,1794370637.476937,10,512.0,182.37,2401,29390,False,False,False,False,45,60,77,136,169,75,296,355,571,876,621,2401,30391,30369,30373,0.000724,,2604,-57,,B,cenit_3mm
+registro,B,,fuga_sin,,,5,1794370638.477196,10,512.0,182.37,2401,29400,False,False,False,False,45,60,77,136,169,74,296,355,571,877,621,2401,30401,30375,30381,0.000856,,2605,-55,,B,cenit_3mm
+registro,B,,fuga_sin,,,6,1794370639.484536,10,512.0,182.37,2400,29379,False,False,False,False,45,60,77,135,170,75,296,356,572,875,622,2400,30378,30353,30351,0.00089,,2606,-55,,B,cenit_3mm
+registro,B,,fuga_sin,,,7,1794370640.509627,10,512.0,182.37,2399,29397,False,False,False,False,45,60,77,136,170,74,296,354,572,877,622,2399,30398,30360,30377,0.001252,,2607,-54,,B,cenit_3mm
+registro,B,,fuga_sin,,,8,1794370641.559108,10,512.0,182.37,2402,29374,False,False,False,False,45,60,77,136,169,75,297,355,572,876,622,2402,30375,30347,30359,0.000923,,2608,-56,,B,cenit_3mm
+registro,B,,fuga_sin,,,9,1794370642.478001,10,512.0,182.37,2398,29394,False,False,False,False,45,60,77,136,169,75,297,355,572,876,622,2398,30395,30365,30361,0.00112,,2609,-56,,B,cenit_3mm

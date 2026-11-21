@@ -1,0 +1,4 @@
+modo,sensor_id,config,etiqueta,fase,pasada,rep,n_t,n_ganancia_idx,n_ganancia_x,n_t_int_ms,n_max_espectral,n_max_cuentas,n_saturado,n_vis_saturado,n_sat_analogica,n_sat_digital,n_f1_405nm,n_f2_425nm,n_fz_450nm,n_f3_475nm,n_f4_515nm,n_f5_550nm,n_fy_555nm,n_fxl_600nm,n_f6_640nm,n_f7_690nm,n_f8_745nm,n_nir_855nm,n_vis_c1,n_vis_c2,n_vis_c3,n_var_luz_ciclos,n_temp_c
+registro,A,,ajuste_nadir_T3,,,0,1794010102.352,9,256.0,182.37,3157,41781,False,False,False,False,47,53,108,178,224,105,415,445,565,1008,702,3157,43186,43153,43157,0.000765,33.53
+registro,A,,ajuste_nadir_T3,,,1,1794010102.957,9,256.0,182.37,3155,41757,False,False,False,False,47,53,108,178,224,105,415,445,565,1008,702,3155,43162,43131,43140,0.000719,33.54
+registro,A,,ajuste_nadir_T3,,,2,1794010103.559,9,256.0,182.37,3155,41768,False,False,False,False,47,53,108,178,224,105,414,445,565,1008,702,3155,43173,43145,43156,0.000649,33.54

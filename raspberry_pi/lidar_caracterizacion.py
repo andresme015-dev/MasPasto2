@@ -1,0 +1,137 @@
+#!/usr/bin/env python3
+"""
+Caracterizacion estatica del LiDAR TF-Nova (PasturaMetrics).
+
+Uso (en la Raspberry):
+    python3 lidar_caracterizacion.py --corrida 1
+    python3 lidar_caracterizacion.py --corrida 2 --n 300
+
+Flujo:
+  1. Coloca el blanco a una distancia y midela con la cinta (en cm).
+  2. Escribe esa distancia y presiona Enter.
+  3. El script descarta lecturas viejas, toma N tramas validas y las guarda.
+  4. Repite. Escribe 'q' para terminar.
+
+Cada fila del CSV es una muestra: puedes calcular media, desviacion,
+sesgo y la regresion de calibracion despues, en el computador.
+
+Formato de trama asumido (formato estandar Benewake, 9 bytes):
+  0x59 0x59 | Dist_L Dist_H | B4 B5 | B6 B7 | Checksum
+  - Distancia en cm (unidad por defecto). Verifica con el datasheet o
+    con tu script actual de ~/maspasto2/ si tu modulo esta en mm.
+  - B4..B7 se guardan crudos (intensidad / temperatura / confianza,
+    segun el modelo). Sirven para detectar lecturas de baja senal.
+"""
+
+import argparse
+import csv
+import os
+import time
+from datetime import datetime
+
+import serial
+
+PUERTO = "/dev/ttyUSB0"
+BAUD = 115200
+HEADER = 0x59
+
+
+def leer_trama(ser, timeout_s=1.0):
+    """Devuelve un dict con una trama valida, o None si no llega a tiempo."""
+    t0 = time.time()
+    while time.time() - t0 < timeout_s:
+        b = ser.read(1)
+        if not b or b[0] != HEADER:
+            continue
+        b2 = ser.read(1)
+        if not b2 or b2[0] != HEADER:
+            continue
+        resto = ser.read(7)
+        if len(resto) != 7:
+            continue
+        trama = bytes([HEADER, HEADER]) + resto
+        if (sum(trama[:8]) & 0xFF) != trama[8]:
+            continue  # checksum invalido: se descarta
+        return {
+            "dist": trama[2] | (trama[3] << 8),
+            "b4": trama[4], "b5": trama[5],
+            "b6": trama[6], "b7": trama[7],
+        }
+    return None
+
+
+def capturar(ser, n):
+    """Toma n tramas validas despues de vaciar el buffer de entrada."""
+    ser.reset_input_buffer()
+    time.sleep(0.05)
+    ser.reset_input_buffer()
+    muestras, fallos = [], 0
+    while len(muestras) < n:
+        m = leer_trama(ser)
+        if m is None:
+            fallos += 1
+            if fallos > 20:
+                raise RuntimeError("El LiDAR no responde: revisa conexion y puerto.")
+            continue
+        m["t"] = time.time()
+        muestras.append(m)
+    return muestras
+
+
+def main():
+    ap = argparse.ArgumentParser(description="Caracterizacion del TF-Nova")
+    ap.add_argument("--corrida", type=int, required=True,
+                    help="Numero de corrida (1, 2, 3...)")
+    ap.add_argument("--n", type=int, default=200,
+                    help="Muestras por distancia (por defecto 200)")
+    ap.add_argument("--blanco", default="carton_blanco",
+                    help="Tipo de blanco (carton_blanco, carton_negro, pasto...)")
+    ap.add_argument("--condicion", default="interior",
+                    help="Condicion de luz (interior, sol, sombra...)")
+    ap.add_argument("--salida", default="lidar_caracterizacion.csv")
+    args = ap.parse_args()
+
+    nuevo = not os.path.exists(args.salida)
+    with serial.Serial(PUERTO, BAUD, timeout=0.1) as ser, \
+            open(args.salida, "a", newline="") as f:
+        w = csv.writer(f)
+        if nuevo:
+            w.writerow(["fecha", "corrida", "blanco", "condicion",
+                        "d_ref_cm", "muestra", "t_s", "dist_raw",
+                        "b4", "b5", "b6", "b7"])
+
+        print(f"Corrida {args.corrida} | blanco={args.blanco} | "
+              f"condicion={args.condicion} | N={args.n}")
+        print("Escribe la distancia medida con la cinta (cm), o 'q' para salir.\n")
+
+        while True:
+            txt = input("d_ref [cm] > ").strip().replace(",", ".")
+            if txt.lower() == "q":
+                break
+            try:
+                d_ref = float(txt)
+            except ValueError:
+                print("  Valor no valido.")
+                continue
+
+            muestras = capturar(ser, args.n)
+            t0 = muestras[0]["t"]
+            fecha = datetime.now().isoformat(timespec="seconds")
+            for i, m in enumerate(muestras):
+                w.writerow([fecha, args.corrida, args.blanco, args.condicion,
+                            d_ref, i, round(m["t"] - t0, 4), m["dist"],
+                            m["b4"], m["b5"], m["b6"], m["b7"]])
+            f.flush()
+
+            d = [m["dist"] for m in muestras]
+            media = sum(d) / len(d)
+            std = (sum((x - media) ** 2 for x in d) / (len(d) - 1)) ** 0.5
+            print(f"  {len(d)} muestras | media = {media:.2f} | "
+                  f"std = {std:.2f} | min = {min(d)} | max = {max(d)} | "
+                  f"error = {media - d_ref:+.2f}\n")
+
+    print(f"Datos guardados en {args.salida}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,47 @@
+CARPETA maspasto2 - MasPasto2 (Raspberry Pi 4, Ubuntu)
+
+Estos archivos son solo codigo. No guardan ni cambian ninguna configuracion del
+sistema (red, punto de acceso, permisos, config.txt). Los datos de caracterizacion
+se guardan en ~/maspasto2/datos_espectro/.
+
+Sensores (cada uno se prueba con: python3 <archivo>.py)
+  test_as7343.py     Espectrometro nadir AS7343, I2C 0x39, con ganancia adaptativa
+                     (--una: una lectura; --ganancia 4: ganancia fija)
+  test_as7341.py     Version anterior con el AS7341 (ya no se usa; se deja de respaldo)
+  test_bmp280.py     Temperatura y presion, I2C 0x76
+  test_ds3231.py     Reloj de tiempo real, I2C 0x68 (indica si la hora es valida)
+  test_mpu6050.py    Inclinacion del baston, I2C 0x69 (AD0 a 3,3 V)
+  test_camara.py     Camara OV5647 por CSI; guarda fotos en ~/maspasto2/fotos
+  test_tfnova.py     LiDAR TF-Nova por adaptador USB-serie CH341, /dev/ttyUSB0
+  lidar_continuo.py  LiDAR en medicion continua o en modo caracterizar
+
+Caracterizacion de los espectrometros (Etapas 1 y 2)
+  caracterizacion_espectro.py registro          ganancias que usa cada sensor (sol/sombra)
+  caracterizacion_espectro.py ganancias         ganancias fijas bajo la lampara + oscuridad
+  caracterizacion_espectro.py intercomparacion  factor k entre los dos sensores
+  caracterizacion_espectro.py ptfe              transmitancia T_d de la pieza de PTFE
+  (python3 caracterizacion_espectro.py -h muestra todas las opciones)
+  Criterio de saturacion: canal mas alto de los 18, VIS incluido, >= 90 % de 65535.
+  Con el VIS saturado los canales espectrales reciben un exceso de cuentas (prueba del
+  2026-10-21), por eso el VIS tambien limita la ganancia.
+
+Reloj
+  set_rtc.py         Escribe la hora del sistema en el DS3231 (requiere hora correcta)
+  rtc_a_sistema.py   Copia la hora del DS3231 al sistema (requiere pila CR2032)
+
+Modulo zenit y modelo
+  receptor_zenit.py  Recibe los paquetes UDP del zenit (puerto 5005) y le envia
+                     ordenes de ganancia (puerto 5006)
+  modelo_biomasa.py  Modelo de biomasa; necesita modelo_pasturametrics.pkl en esta carpeta
+
+firmware_zenit/firmware_zenit_as7343.ino
+  Firmware actual del ESP32 del modulo zenit con el AS7343 (se carga con el Arduino IDE,
+  no se ejecuta en la Raspberry). Librerias del IDE: "Adafruit AS7343" y "Adafruit BusIO".
+  USAR_RED_CASA = true: se conecta al Wi-Fi de la casa y envia a IP_RPI_CASA (pruebas en casa).
+  USAR_RED_CASA = false: se conecta a la red PasturaMetrics de la Raspberry (campo).
+firmware_zenit/firmware_zenit.ino
+  Version anterior con el AS7341 (respaldo).
+
+Librerias de Python que usan estos archivos
+  smbus2, RPi.bme280, pyserial, adafruit-circuitpython-as7343 (con adafruit-blinka),
+  picamera2, joblib, pandas, scikit-learn
