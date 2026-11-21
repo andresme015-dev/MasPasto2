@@ -81,4 +81,4 @@ Méndez Martínez, A. F. (2026). *MasPasto2: diseño, implementación y validaci
 
 ## Licencia
 
-Por definir por el autor antes de publicar el repositorio.
+[MIT](LICENSE): se puede usar, modificar y redistribuir citando al autor. Los datos de entrenamiento del modelo (conjunto CSIRO) no se incluyen y tienen sus propias condiciones.
