@@ -1,6 +1,6 @@
 # Firmware del módulo cenit (ESP32)
 
-`firmware_zenit_as7343/firmware_zenit_as7343.ino` es el firmware que tuvo el ESP32 del cenit desde el 26 de octubre de 2026 (ver cómo se identificó en [`../VERSIONES.md`](../VERSIONES.md)).
+`firmware_zenit_as7343/firmware_zenit_as7343.ino` es el firmware que tuvo el ESP32 del cenit desde el 26 de octubre de 2026 (en el computador del autor se llama `firmware_zenit_as7343_no_apagado.ino`) (ver cómo se identificó en [`../VERSIONES.md`](../VERSIONES.md)).
 
 ## Qué hace
 - Lee el AS7343 por I²C (SDA = GPIO21, SCL = GPIO22) en el modo de 18 canales, con integración de 182,4 ms (ATIME = 99, ASTEP = 655).
@@ -19,5 +19,5 @@
 `PIN_CARGA` permite activar una carga periódica para baterías que se apagan con bajo consumo; está desactivada (`-1`) y no se usó.
 
 ## Versiones anteriores
-- `firmware_zenit_as7343_21oct/` y `firmware_zenit_as7343_capsula_ptfe/`: misma lógica; si el sensor no responde al arrancar, el ESP32 se detiene sin conectar el Wi-Fi. La segunda, con la etiqueta `capsula_ptfe`, es la que el autor indicó como última carga; ningún dato del proyecto se tomó con ella. Para saber cuál tiene el ESP32, encenderlo y correr `python3 receptor_zenit.py` en la Raspberry Pi: el campo `config` de los paquetes dice `cenit_3mm` (versión principal) o `capsula_ptfe`.
+- `firmware_zenit_as7343_21oct/` y `firmware_zenit_as7343_capsula_ptfe/`: misma lógica; si el sensor no responde al arrancar, el ESP32 se detiene sin conectar el Wi-Fi. La segunda tiene la etiqueta `capsula_ptfe` y es del 21 de octubre; ningún dato del proyecto se tomó con ella. Para saber cuál tiene el ESP32, encenderlo y correr `python3 receptor_zenit.py` en la Raspberry Pi: el campo `config` de los paquetes dice `cenit_3mm` (versión principal) o `capsula_ptfe`.
 - `firmware_zenit/`: versión con el AS7341, el espectrómetro que se reemplazó.
