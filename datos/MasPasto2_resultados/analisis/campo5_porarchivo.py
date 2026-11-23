@@ -13,7 +13,10 @@ for f in sorted(glob.glob(f'{D}/registro_sensorA-B_campo_5nov_*.csv'), key=lambd
     sn = {c: d[f'n_{c}']/(d['n_ganancia_x']*d['n_t_int_ms']) for c in CH}
     sz = {c: d[f'z_{c}']/(d['z_ganancia_x']*d['z_t_int_ms']) for c in CH}
     q = {c: sn[c]/sz[c] for c in ('f6_640nm','f7_690nm','f8_745nm','nir_855nm')}
+    # Par valido: con cenit, sin saturar y con desfase entre modulos de 0,3 s o menos (criterio del documento).
     ok = zok & ~d['n_saturado'].astype(bool) & ~d['z_saturado'].fillna(False).astype(bool)
+    if 'z_desfase_s' in d:
+        ok &= d['z_desfase_s'].abs() <= 0.3
     r = dict(hora=hh, etiqueta=et, n=n, n_sin_cenit=int((~zok).sum()),
              sat_n=int(d['n_saturado'].astype(bool).sum()), sat_z=int(d['z_saturado'].fillna(False).astype(bool).sum()),
              g_n='/'.join(str(x) for x in sorted(d['n_ganancia_x'].unique())),
@@ -22,8 +25,10 @@ for f in sorted(glob.glob(f'{D}/registro_sensorA-B_campo_5nov_*.csv'), key=lambd
              maxpct_z=round(100*d['z_max_cuentas'].max()/65535,1) if zok.any() else np.nan,
              f6_n=round(d['n_f6_640nm'].mean(),0), nir_n=round(d['n_nir_855nm'].mean(),0),
              f6_z=round(d['z_f6_640nm'].mean(),0), nir_z=round(d['z_nir_855nm'].mean(),0),
-             cv_zNIR=round(100*d['z_nir_855nm'].std()/d['z_nir_855nm'].mean(),2),
-             cv_nNIR=round(100*d['n_nir_855nm'].std()/d['n_nir_855nm'].mean(),2),
+             # CV de la luz sobre la senal normalizada por la ganancia (las cuentas crudas no sirven: la ganancia
+             # adaptativa cambia dentro de la corrida y compensa parte del cambio de luz)
+             cv_zNIR=round(100*sz['nir_855nm'][ok].std()/sz['nir_855nm'][ok].mean(),2) if ok.any() else np.nan,
+             cv_nNIR=round(100*sn['nir_855nm'][ok].std()/sn['nir_855nm'][ok].mean(),2) if ok.any() else np.nan,
              cv_qNIR=round(100*q['nir_855nm'][ok].std()/q['nir_855nm'][ok].mean(),2),
              cv_qF6=round(100*q['f6_640nm'][ok].std()/q['f6_640nm'][ok].mean(),2),
              desfase_max=round(d['z_desfase_s'].abs().max(),3) if 'z_desfase_s' in d else np.nan,

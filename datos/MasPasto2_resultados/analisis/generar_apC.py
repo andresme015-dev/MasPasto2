@@ -375,9 +375,10 @@ open(OUT + "tC_sat.tex", "w").write(
     + "\n".join(" & ".join(r) + "\\\\" for r in filas) + "\n\\bottomrule\n\\end{tabularx}\n\\end{table}\n")
 
 filas = [[x.corrida.replace("sin2", "sin (2)").replace("sin ", "Sin atenuador, ").replace("con ", "Con atenuador, ").replace("sin (2) ", "Sin atenuador (2), "),
-          f(x.max_pct_05x, 1), f(x.vis_pct_05x, 1), f(x.cv_nir_pct, 2), x.saturadas_1x] for _, x in m13.iterrows()]
-tabla("tC_med13", ["Corrida (13 nov.)", "Canal más alto a 0,5\\x{} (\\%)", "VIS (\\%)", "CV del NIR (\\%)", "Saturadas a 1\\x{}"],
-      filas, "lcccc", "Cenit con sol directo a la ganancia mínima, sin y con el atenuador.", "tab:C_med13", tam="\\small")
+          f(x.max_pct_05x, 1), f(x.espectral_pct_05x, 1), f(x.cv_nir_pct, 2), x.saturadas_1x] for _, x in m13.iterrows()]
+tabla("tC_med13", ["Corrida (13 nov.)", "Canal más alto, VIS (\\%)", "Canal espectral más alto (\\%)", "CV del NIR (\\%)", "Saturadas a 1\\x{}"],
+      filas, "lcccc", "Cenit con sol directo a la ganancia mínima (0,5\\x{}), sin y con el atenuador: fracción de la escala que "
+      "usan el canal sin filtro (VIS, el que fija la saturación) y el canal espectral más alto.", "tab:C_med13", tam="\\small")
 
 al = rd("tarde11_alturas.csv")
 filas = []
