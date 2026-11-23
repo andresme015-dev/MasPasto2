@@ -16,7 +16,7 @@ Cada sesión tiene su carpeta con los CSV crudos tal como salieron de la Raspber
 
 ## 2026-10-22 — Laboratorio: caja oscura con lámpara fija
 - **Montaje:** caja de cartón como recinto oscuro, halógena fija en el techo a 34 cm de los sensores, fuente DC, base negra, luces apagadas, LED de las placas tapados (Fig. 11 del informe).
-- **Resultados:** estabilidad (150 pares, 7,1 min: CV del NIR 0,04 % en A, 0,05 % en B, 0,03 % en el cociente); factores de ganancia (8×: −3,1 % en A y −3,2 % en B; Tabla 10); k con difusor común e intercambio A‑B‑A‑B‑A (0,958–0,978, dispersión 0,2–2,6 %; Fig. 12); transmitancia de la pieza de PTFE de 2 mm (0,148–0,198 entre FY y NIR).
+- **Resultados:** estabilidad (150 pares, 7,1 min: CV del NIR 0,04 % en A, 0,05 % en B, 0,03 % en el cociente); factores de ganancia (8×: −3,1 % en A y −3,2 % en B; Tabla 10); k con difusor común e intercambio A‑B‑A‑B‑A (0,958–0,978, dispersión 0,2–2,6 %; Fig. 12); transmitancia de la pieza de PTFE de 2 mm (0,148–0,197 entre FY y NIR).
 - **Derivados:** `derivados/lab22_*.csv`. **Informe:** Sec. 9.5.
 - **Nota:** la hora de los nombres de archivo no es la real (se ajustó a mano a 18:00, 19:00 y 20:00 en los reinicios del intercambio); el orden sí es correcto. La sesión real fue entre las 17:00 y las 18:20.
 
@@ -153,7 +153,7 @@ Cada sesión tiene su carpeta con los CSV crudos tal como salieron de la Raspber
   - El cociente varió hasta 17 % en 4 minutos. Con una tendencia cuadrática en el tiempo, el cartón a 15 cm lee entre 8,8 % (F6) y 10,4 % (F8) más que a 10 cm (error estándar de 1 %). Las comparaciones con las tomas vecinas dan entre 3 y 16 %.
   - El efecto es casi igual en todas las bandas: menos de 0,006 de NDVI.
 - **Campo de visión (16:55–17:05):**
-  - Montaje: discos blancos de 6 a 30 cm sobre tela negra, a 12 cm de la ventana del nadir (medido por el operador), no a los 10 cm habituales.
+  - Montaje: discos blancos de 6, 10, 14, 18, 22 y 32 cm de diámetro sobre tela negra (los archivos de los dos mayores quedaron rotulados d24 y d30, el diámetro propuesto; el real es 22 y 32 cm), a 12 cm de la ventana del nadir (medido por el operador), no a los 10 cm habituales.
   - Repeticiones: los discos de 10 y 14 cm se repitieron enseguida y se promedian. El primer pliego blanco (6 lecturas, con la ganancia cambiando) se descartó.
   - Respuesta: coseno recortada en 35° (33,6–36,7° según la repetición; 33,8° si se cuentan los 4–5 mm que el chip está hundido detrás de la ventana). El 50 % de la señal viene de dentro de 24° y el 90 % de dentro de 33°.
   - Con el chip a 55 cm, el 50 % de la señal viene de un círculo de unos 49 cm y el 90 % de uno de unos 71 cm.

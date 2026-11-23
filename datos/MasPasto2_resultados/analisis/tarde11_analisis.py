@@ -284,6 +284,9 @@ for f in sorted(glob.glob(os.path.join(D, 'registro_sensorA-B_fov_*_2026*.csv'))
     q = (s_norm(d, 'n_', 'A') / s_norm(d, 'z_', 'B')).mean()
     fv.setdefault(et, []).append(dict(archivo=os.path.basename(f), n=len(d), t=d.n_t.mean(), q=q,
                                       gn=sorted(set(d.n_ganancia_x)), gz=sorted(set(d.z_ganancia_x))))
+# Diametro real de cada disco (cm). El programa de medicion se corrio con la etiqueta del diametro propuesto
+# (d24 y d30); los discos que se cortaron midieron 22 y 32 cm (dato del operador, 22 nov 2026).
+DIAM_REAL = {'fov_d06': 6.0, 'fov_d10': 10.0, 'fov_d14': 14.0, 'fov_d18': 18.0, 'fov_d24': 22.0, 'fov_d30': 32.0}
 H = 12.0          # distancia de la ventana del nadir a la lamina medida por el operador (12 cm; no los 10 cm de siempre)
 neg = {c: (fv['fov_negro_1'][0]['q'][c] + fv['fov_negro_2'][0]['q'][c]) / 2 for c in CH}
 bl = fv['fov_blanco'][-1]['q']          # la completa (17:03:57); la de 17:03:23 tiene 6 lecturas con la ganancia cambiando
@@ -291,7 +294,7 @@ CHF = ['fy_555nm', 'fxl_600nm', 'f6_640nm', 'f7_690nm', 'f8_745nm', 'nir_855nm']
 filasF = []
 for et, lst in fv.items():
     for k, x in enumerate(lst):
-        d_cm = float(et[-2:]) if et.startswith('fov_d') else np.nan
+        d_cm = DIAM_REAL.get(et, np.nan)
         fila = dict(etiqueta=et, archivo=x['archivo'], lecturas=x['n'], completa=x['n'] >= 10,
                     diametro_cm=d_cm, gan_nadir=x['gn'], gan_cenit=x['gz'])
         for c in CH:

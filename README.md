@@ -45,6 +45,7 @@ La altura es la distancia al suelo (medida una vez por sesión) menos la distanc
 3. **Instalar las librerías** de [`requirements.txt`](requirements.txt).
 4. **Cargar el firmware** del cenit con el Arduino IDE, poniendo la clave de la red del dispositivo (ver [`firmware_cenit/`](firmware_cenit/)).
 5. **Medir:** `cd ~/maspasto2 && python3 servidor.py` y abrir `http://192.168.4.1:8000` en el celular conectado a la red *PasturaMetrics*. Protocolo completo en [`docs/uso.md`](docs/uso.md).
+6. **Sacar los datos:** en la pantalla *Datos*, *Descargar CSV* baja al celular un CSV con todas las mediciones (sin memoria USB); *Copiar a USB* copia además los datos crudos y las fotos.
 
 Para probar la interfaz sin sensores: `python3 servidor.py --simulado`.
 
@@ -52,10 +53,10 @@ Para probar la interfaz sin sensores: `python3 servidor.py --simulado`.
 
 | Prueba | Criterio de la propuesta | Resultado |
 |---|---|---|
-| E1 Repetibilidad | CV < 5 % | CV < 1 % en todos los canales; NDVI 0,7563 ± 0,0003 |
+| E1 Repetibilidad (lámpara en DC, pasto cortado) | CV < 5 % | CV < 1 % en todos los canales; NDVI 0,7563 ± 0,0003 |
 | E2 Exactitud relativa | Mismo orden que la fracción verde | Spearman 0,952 (NDRE₂) y 0,905 (NDVI) en 8 superficies |
 | E3 Temperatura | Cambio < 5 % | < 0,1 % entre 25,2 y 28,6 °C (≤ 0,03 %/°C) |
-| E4 Compensación de luz | Corregido más estable | NDVI cambia 0,004 con la luz al 51 % (0,033 sin corregir) |
+| E4 Compensación de luz | Corregido más estable | Con lámpara, NDVI cambia 0,004 con la luz al 51 % (0,033 sin corregir); en campo, 0,004 entre sol y nublado |
 | Modelo en el equipo | < 200 ms | 27,3 ms por inferencia; R² = 0,48 en validación cruzada (datos públicos) |
 | Conjunto de prueba | ≥ 20 mediciones reales exportables por USB | 31 mediciones válidas |
 
@@ -77,7 +78,7 @@ Para probar la interfaz sin sensores: `python3 servidor.py --simulado`.
 
 ## Documento y citación
 
-Méndez Martínez, A. F. (2026). *MasPasto2: diseño, implementación y validación de un dispositivo portátil de campo para la estimación proximal de masa de forraje en pasturas tropicales mediante teledetección espectral con corrección de irradiancia y aprendizaje automático*. Proyecto de grado, Ingeniería Electrónica, Universidad de los Andes.
+Méndez Martínez, A. F. (2026). *Diseño, implementación y validación de un dispositivo portátil de campo para la estimación proximal de masa de forraje en pasturas tropicales mediante teledetección espectral con corrección de irradiancia y aprendizaje automático*. Proyecto de grado, Ingeniería Electrónica, Universidad de los Andes.
 
 ## Licencia
 
