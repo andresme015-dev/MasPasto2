@@ -1,0 +1,13 @@
+# Versiones con las que se generaron las tablas y figuras del documento final (23 nov 2026).
+# Instalar con: pip install -r requirements.txt
+# Con estas versiones, las figuras salen idénticas a las del documento; con otras, los datos son los
+# mismos y pueden cambiar detalles mínimos de dibujo (suavizado, espaciado de letras).
+numpy==2.5.3
+pandas==3.0.5
+matplotlib==3.11.2
+scipy==1.18.1
+Pillow==12.3.0
+openpyxl==3.1.5
+# Solo para recalcular el modelo (carpeta modelo/ del repositorio, con el train.csv de CSIRO):
+scikit-learn==1.9.1
+xgboost==3.4.1
