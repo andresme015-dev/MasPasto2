@@ -276,7 +276,7 @@ guarda(fig, "fig_saturacion.pdf")
 # ------------------------------------------------------------------------------------------
 esq = ["CV 5 sin barajar", "CV 5 barajada\n×10", "CV agrupada por\nsitio y fecha"]
 r2 = {"Random Forest": ([0.57, 0.48, 0.23], [0.05, 0.17, 0.28]),
-      "XGBoost": ([0.46, 0.39, 0.06], [0.08, 0.23, 0.38]),
+      "XGBoost": ([0.46, 0.38, 0.06], [0.08, 0.23, 0.38]),
       "Lineal (NDVI×altura)": ([0.32, 0.29, 0.10], [0.09, 0.16, 0.16])}
 fig, ax = plt.subplots(1, 2, figsize=(7.2, 2.6), gridspec_kw={"width_ratios": [1.6, 1], "wspace": 0.55})
 a = ax[0]; x = np.arange(3); wb = 0.26

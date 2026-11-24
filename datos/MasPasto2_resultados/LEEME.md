@@ -44,6 +44,14 @@ Carpeta de datos del proyecto de grado MasPasto2 (Andrés Felipe Méndez Martín
 - Cenit con sol del 13 nov: `python3 -I analisis/mediodia13_analisis.py 2026-11-13_ventana_cenit_mediodia derivados`.
 - Todos se comprobaron: reproducen exactamente las tablas guardadas.
 
+## Cómo regenerar las figuras del documento final
+Desde esta carpeta, cada programa vuelve a dibujar las figuras de datos a partir de los crudos y los derivados:
+- `python3 -I analisis/figuras_documento_final.py . <salida>`: Figs. 4, 5, 7, 8, 9 y 10 (ganancias, óptica, compensación, saturación, E2 y modelo). La del modelo grafica los valores que calculan `modelo/verificacion_modelo.py` y `modelo/cv_por_sitio_y_fecha.py` del repositorio, que necesitan el `train.csv` de CSIRO.
+- `python3 -I analisis/lidar_calibracion.py [salida]`: Fig. 6 (LiDAR) y todas las métricas de la calibración.
+- `python3 -I analisis/generar_apC.py`: tablas y figuras del informe de validación (Apéndice B).
+- `python3 -I analisis/figuras_avance2.py` y `figuras_avance3.py`: figuras de k y de las láminas de PTFE del Apéndice B (`lab_k.pdf` y `lab29_ptfe.pdf`, en `salidas/figuras_avance/`).
+Las fotos del montaje, del prototipo y de la interfaz no salen de los datos: son fotos y capturas de pantalla.
+
 ## Reglas
 1. **Los crudos no se editan.** Cualquier corrección se hace en el análisis.
 2. **Nada se borra:** lo que no sirve va a `descartados/` y su motivo al índice.
