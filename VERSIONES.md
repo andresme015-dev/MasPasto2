@@ -64,7 +64,7 @@ El 18 de noviembre se instalaron `medir.py` (que aplica los factores de ganancia
 
 ## Modelo (`modelo/`)
 
-El cuaderno `Entrenamiento_de_ModeloML_maspasto2.ipynb` entrena el Random Forest con `n_estimators=100` y `random_state=42` sobre las 357 muestras de biomasa verde del conjunto público CSIRO y lo guarda como `modelo_pasturametrics.pkl`. El modelo instalado tiene esos mismos parámetros y las mismas tres entradas. Al reentrenarlo con scikit-learn 1.9.1 se obtiene la misma predicción de referencia (4405,1 kg MS/ha para NDVI 0,70 y 15 cm); sobre las muestras de entrenamiento, las predicciones difieren hasta en 41 kg MS/ha, lo que se atribuye a la versión de la librería.
+El cuaderno `Entrenamiento_de_ModeloML_maspasto2.ipynb` entrena el Random Forest con `n_estimators=100` y `random_state=42` sobre las 357 muestras de biomasa verde del conjunto público CSIRO y lo guarda como `modelo_pasturametrics.pkl`. El modelo instalado tiene esos mismos parámetros y las mismas tres entradas. Al reentrenarlo con scikit-learn 1.9.1 se obtiene la misma predicción de referencia (4405,1 kg MS/ha para NDVI 0,70 y 15 cm); sobre las muestras de entrenamiento, las predicciones difieren hasta en 41 kg MS/ha, lo que se atribuye a la versión de la librería. La importancia de las variables del modelo instalado es de 0,71 para NDVI×altura, 0,15 para la altura y 0,15 para el NDVI; el 0,64 que imprime el cuaderno es del modelo que entrena con la partición de 267 muestras. Desde el 23 de noviembre la figura del modelo del documento final muestra la del modelo instalado.
 
 ## Análisis (`datos/MasPasto2_resultados/analisis/`)
 

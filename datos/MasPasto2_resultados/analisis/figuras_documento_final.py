@@ -273,6 +273,8 @@ guarda(fig, "fig_saturacion.pdf")
 # ------------------------------------------------------------------------------------------
 # 6. Modelo: R2 por esquema de validacion e importancia de variables. Valores de
 #    verificacion_modelo.py (357 muestras CSIRO; media y desviacion de las particiones).
+#    Importancia: feature_importances_ del modelo instalado, entrenado con las 357 muestras
+#    (raspberry_pi/modelo_pasturametrics.pkl del repositorio: 0,146 NDVI, 0,147 altura, 0,707 NDVI x altura).
 # ------------------------------------------------------------------------------------------
 esq = ["CV 5 sin barajar", "CV 5 barajada\n×10", "CV agrupada por\nsitio y fecha"]
 r2 = {"Random Forest": ([0.57, 0.48, 0.23], [0.05, 0.17, 0.28]),
@@ -285,9 +287,9 @@ for i, (k, col) in enumerate(zip(r2, (VERDE, NARANJA, GRIS))):
 a.axhline(0, color=NEGRO, lw=0.6); a.set_xticks(x); a.set_xticklabels(esq, fontsize=7)
 a.set_ylabel("R² (media ± desv.)"); a.set_ylim(-0.4, 1.1); a.legend(loc="upper right", fontsize=6.5, ncol=1)
 a.set_title("a) R² según el esquema de validación")
-a = ax[1]; var = ["NDVI×altura", "Altura", "NDVI"]; imp = [0.64, 0.24, 0.12]
+a = ax[1]; var = ["NDVI×altura", "Altura", "NDVI"]; imp = [0.71, 0.15, 0.15]
 b = a.barh(var, imp, color=[VERDE, "#9FBF8A", "#9FBF8A"]); a.invert_yaxis()
 for yi, v in enumerate(imp):
     a.text(v + 0.01, yi, f"{v:.2f}".replace(".", ","), va="center", fontsize=7)
-a.set_xlim(0, 0.8); a.set_xlabel("Importancia (reducción de impureza)"); a.set_title("b) Importancia en Random Forest")
+a.set_xlim(0, 0.8); a.set_xlabel("Importancia (reducción de impureza)"); a.set_title("b) Importancia en el modelo instalado")
 guarda(fig, "modelo.pdf")
