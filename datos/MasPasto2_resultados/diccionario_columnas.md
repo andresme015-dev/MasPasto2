@@ -17,7 +17,7 @@ Prefijo `n_` = módulo nadir (sensor A, en la Raspberry); prefijo `z_` = módulo
 | `*_saturado`, `*_vis_saturado` | Lectura saturada según el criterio del proyecto (canal más alto ≥ 90 % de 65 535) y si el VIS superó ese límite |
 | `*_sat_analogica`, `*_sat_digital` | Indicadores de saturación del sensor (STATUS2); nunca se activaron |
 | `*_f1_405nm` … `*_nir_855nm` | Cuentas crudas de los 12 canales espectrales (F1, F2, FZ, F3, F4, F5, FY, FXL, F6, F7, F8, NIR) |
-| `*_vis_c1..c3` | Canal VIS (sin filtro) en cada uno de los tres ciclos del modo de 18 canales |
+| `*_vis_c1..c3` | Canal VIS (sin filtro) en cada uno de los tres ciclos del modo de 18 canales: suma de sus dos fotodiodos (`VIS_TL` + `VIS_BR`), así que puede pasar de 65 535. La saturación se juzga con `*_max_cuentas`, que toma cada fotodiodo por separado |
 | `*_var_luz_ciclos` | Variación relativa del VIS entre los tres ciclos: indicador de luz inestable durante la lectura |
 | `*_temp_c` | Temperatura del BMP280 (°C); vacía si el sensor no estaba conectado |
 | `z_seq` | Contador de paquetes del ESP32 (uno por segundo desde que arranca); sirve para ordenar corridas cuando el reloj de la Raspberry está mal |
@@ -87,8 +87,8 @@ Todas las señales se normalizan igual: `(S − oscuridad) / (G · t_int)`. Adem
 
 ## Derivados del 13 nov (`derivados/mediodia13_atenuador.csv`)
 - Una fila por corrida válida.
-- `max_pct_05x`: % de la escala del canal más alto según el programa.
-- `vis_pct_05x`: % del VIS más alto.
+- `max_pct_05x`: % de la escala del canal más alto de los 18 (`z_max_cuentas`); es el valor que decide la saturación y el que usa el documento.
+- `vis_pct_05x`: la suma VIS (`VIS_TL` + `VIS_BR`) más alta, en % de 65 535; no es la fracción de escala de un canal.
 - `espectral_pct_05x`: % del canal espectral más alto.
 - `cv_nir_pct`: CV del NIR en las 5 lecturas.
 - `saturadas_1x`: lecturas saturadas a 1×.
