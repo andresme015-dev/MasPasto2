@@ -12,7 +12,7 @@ F = os.path.join(BASE, "salidas", "figuras_avance"); os.makedirs(F, exist_ok=Tru
 CH = ["f1_405nm", "f2_425nm", "fz_450nm", "f3_475nm", "f4_515nm", "f5_550nm", "fy_555nm",
       "fxl_600nm", "f6_640nm", "f7_690nm", "f8_745nm", "nir_855nm"]
 WL = [405, 425, 450, 475, 515, 550, 555, 600, 640, 690, 745, 855]
-plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 9, "axes.spines.top": False,
+plt.rcParams.update({"text.hinting": "no_hinting", "font.family": "DejaVu Sans", "font.size": 9, "axes.spines.top": False,
                      "axes.spines.right": False, "axes.grid": True, "grid.alpha": 0.25})
 C1, C2, C3, C4, C5 = "#2F6B4F", "#C0622B", "#4C72B0", "#8C6BB1", "#7A7A7A"
 

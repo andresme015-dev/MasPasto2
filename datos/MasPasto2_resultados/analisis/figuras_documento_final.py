@@ -16,7 +16,7 @@ B, OUT = sys.argv[1], sys.argv[2]
 D = os.path.join(B, "derivados")
 os.makedirs(OUT, exist_ok=True)
 VERDE, NARANJA, AZUL, GRIS, NEGRO = "#2E6B3A", "#C0622B", "#3B6FB6", "#7A7A7A", "#222222"
-plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 8.5, "axes.spines.top": False,
+plt.rcParams.update({"text.hinting": "no_hinting", "font.family": "DejaVu Sans", "font.size": 8.5, "axes.spines.top": False,
                      "axes.spines.right": False, "axes.grid": True, "grid.alpha": 0.3,
                      "legend.frameon": False, "legend.fontsize": 7.5, "axes.titlesize": 9,
                      "axes.titlelocation": "left", "pdf.fonttype": 42})

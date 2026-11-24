@@ -4,7 +4,7 @@ import os, numpy as np, pandas as pd, matplotlib
 matplotlib.use("Agg"); import matplotlib.pyplot as plt
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # carpeta MasPasto2_resultados
 D=os.path.join(BASE,"2026-10-28_lab_PTFE_E1_E4","crudos"); F=os.path.join(BASE,"salidas","figuras_avance"); os.makedirs(F,exist_ok=True)
-plt.rcParams.update({"font.family":"DejaVu Sans","font.size":9,"axes.spines.top":False,"axes.spines.right":False,"axes.grid":True,"grid.alpha":0.25})
+plt.rcParams.update({"text.hinting": "no_hinting", "font.family":"DejaVu Sans","font.size":9,"axes.spines.top":False,"axes.spines.right":False,"axes.grid":True,"grid.alpha":0.25})
 AZ, NA, VE = "#3F6FB5", "#C0622B", "#2A8A57"
 L=lambda s: pd.read_csv(os.path.join(D,f"registro_sensorA-B_{s}.csv"))
 nd=lambda a,b:(a-b)/(a+b)

@@ -17,7 +17,7 @@ CH = ["f1_405nm", "f2_425nm", "fz_450nm", "f3_475nm", "f4_515nm", "f5_550nm", "f
 NOM = {c: c.split("_")[0].upper().replace("FXL", "FXL") for c in CH}
 NOM["nir_855nm"] = "NIR"
 PICO = {c: c.split("_")[1].replace("nm", "") for c in CH}
-plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 9, "axes.spines.top": False, "axes.spines.right": False})
+plt.rcParams.update({"text.hinting": "no_hinting", "font.family": "DejaVu Sans", "font.size": 9, "axes.spines.top": False, "axes.spines.right": False})
 
 
 def rd(n):

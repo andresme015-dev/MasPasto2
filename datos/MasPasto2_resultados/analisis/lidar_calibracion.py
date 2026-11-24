@@ -55,7 +55,7 @@ gm = g.groupby("d_ref_cm")["mean"].mean()
 print(f"Cerca del sensor: 5 cm se lee como {gm.loc[5.0]:.0f} cm y 10 cm como {gm.loc[10.0]:.0f} cm")
 
 # ---------------- figura ----------------
-plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 6.8, "axes.spines.top": False,
+plt.rcParams.update({"text.hinting": "no_hinting", "font.family": "DejaVu Sans", "font.size": 6.8, "axes.spines.top": False,
                      "axes.spines.right": False})
 COL = {1: "#2E7D32", 2: "#E65100", 3: "#1565C0"}
 NOM = {1: "Corrida 1 (ida)", 2: "Corrida 2 (vuelta)", 3: "Corrida 3 (ida)"}

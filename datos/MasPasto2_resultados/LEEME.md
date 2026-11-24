@@ -45,7 +45,7 @@ Carpeta de datos del proyecto de grado MasPasto2 (Andrés Felipe Méndez Martín
 - Todos se comprobaron: reproducen exactamente las tablas guardadas.
 
 ## Cómo regenerar las figuras del documento final
-Las versiones de Python y de las librerías con que se generaron están en `requirements.txt` (`pip install -r requirements.txt`); con ellas las figuras salen idénticas a las del documento.
+Las versiones de Python y de las librerías con que se generaron están en `requirements.txt` (`pip install -r requirements.txt`); con ellas las figuras salen idénticas a las del documento. Cada programa fija su propio estilo (fuente DejaVu Sans, tamaños y suavizado del texto), así que el resultado no depende de la configuración de matplotlib del computador.
 Desde esta carpeta, cada programa vuelve a dibujar las figuras de datos a partir de los crudos y los derivados:
 - `python3 -I analisis/figuras_documento_final.py . <salida>`: Figs. 4, 5, 7, 8, 9 y 10 (ganancias, óptica, compensación, saturación, E2 y modelo). La del modelo grafica los valores que calculan `modelo/verificacion_modelo.py` y `modelo/cv_por_sitio_y_fecha.py` del repositorio, que necesitan el `train.csv` de CSIRO.
 - `python3 -I analisis/lidar_calibracion.py [salida]`: Fig. 6 (LiDAR) y todas las métricas de la calibración.
