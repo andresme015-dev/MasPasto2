@@ -308,7 +308,7 @@ filas = [["Lámina de 2~mm a 3~mm del sensor (lámpara, 22 oct.)"] + [f(tp.loc[c
          ["Atenuador de 2~mm, cielo de la tarde (11 nov., corrida 2)"] + [f(a11["T2_" + c], 3) for c in cs],
          ["Atenuador de 2~mm, sol directo (13 nov.)"] + [f(m13c["T_" + c], 3) for c in cs]]
 tabla("tC_T", ["Difusor", "FY 555", "F6 640", "F7 690", "F8 745", "NIR 855"], filas, "lccccc",
-      "Transmitancia de las piezas de PTFE (cociente de la señal con y sin la pieza).", "tab:C_T", tam="\\small")
+      "Transmitancia de las piezas de PTFE (cociente de la señal con y sin la pieza). El atenuador, a la ganancia mínima (0,5\\x{}), la que se usa a pleno sol.", "tab:C_T", tam="\\small")
 
 an = rd("noche10_angular.csv")
 filas = []

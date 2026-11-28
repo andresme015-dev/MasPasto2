@@ -16,7 +16,7 @@ Autor: Andrés Felipe Méndez Martínez. Asesor: Fredy Enrique Segura Quijano. C
 | [`raspberry_pi/`](raspberry_pi/) | Programas del módulo nadir (Raspberry Pi 4), **copia exacta** de los que corren en el equipo (verificados con su huella MD5, ver [`VERSIONES.md`](VERSIONES.md)). |
 | [`firmware_cenit/`](firmware_cenit/) | Firmware del ESP32 del módulo cenit (Arduino IDE). |
 | [`modelo/`](modelo/) | Cuaderno con el que se entrenó el modelo de biomasa que está instalado en el equipo. |
-| [`datos/MasPasto2_resultados/`](datos/MasPasto2_resultados/) | Datos crudos de las 13 sesiones de prueba, tablas derivadas y programas de análisis que producen las cifras y figuras del documento final. |
+| [`datos/MasPasto2_resultados/`](datos/MasPasto2_resultados/) | Datos crudos de las 13 sesiones (la calibración del LiDAR del 6 de octubre y las 12 sesiones de prueba del 21 de octubre al 13 de noviembre), tablas derivadas y programas de análisis que producen las cifras y figuras del documento final. |
 | [`datos/conjunto_de_prueba/`](datos/conjunto_de_prueba/) | Las mediciones reales del dispositivo exportadas por USB, depuradas: 31 válidas sobre superficies reales, con su registro completo y fotos. |
 | [`docs/`](docs/) | Instalación y uso. |
 

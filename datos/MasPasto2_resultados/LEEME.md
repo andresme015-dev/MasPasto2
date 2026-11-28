@@ -19,6 +19,8 @@ Carpeta de datos del proyecto de grado MasPasto2 (Andrés Felipe Méndez Martín
 
 ## Sesiones incluidas (corte 13 nov 2026, informe de avance v6)
 
+La última columna da la sección del informe de avance v6; en el documento final estas pruebas están en la Sección 8 y en el Apéndice B, y `indice_corridas.csv` dice dónde se usa cada archivo.
+
 | Carpeta | Qué se hizo | Sección del informe v6 |
 |---|---|---|
 | `2026-10-06_lab_lidar` | Calibración del LiDAR contra cinta métrica (18 000 lecturas) | Documento final, Sec. 8 y Apéndice B.14 |
