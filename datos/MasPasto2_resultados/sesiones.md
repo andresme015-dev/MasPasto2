@@ -33,7 +33,7 @@ Cada sesión tiene su carpeta con los CSV crudos tal como salieron de la Raspber
 ## 2026-10-28/29 — Pruebas con lámpara en casa (fuente DC controlada): PTFE, llenado, E1 y E4
 - **Lugar:** casa de Andrés, con la halógena en fuente DC regulada (fuera del laboratorio). Luz estable: CV del NIR del cenit ≤ 0,05 % por corrida.
 - **Montaje:** nadir en protoboard solo con el AS7343 (fallas del bus I2C; BMP280 retirado), ventana a 15 cm de la lámina; halógena a ~30 cm en horizontal y 35 cm de alto; cenit al lado (Fig. 17).
-- **PTFE (dos intentos):** las láminas de 3 y 6 mm no son opacas (Tabla 12). **Llenado:** la lámina se bajó 5 y 10 cm; corregido por irradiancia, semiángulo equivalente entre 30° y 45° (Tabla 13).
+- **PTFE (dos intentos):** una lámina de 2 mm y dos apiladas (4 mm) no son opacas (Tabla 12); los archivos llevan los rótulos `3mm` y `6mm`, puestos al adquirir, pero todas las láminas son de 2 mm. **Llenado:** la lámina se bajó 5 y 10 cm; corregido por irradiancia, semiángulo equivalente entre 30° y 45° (Tabla 13).
 - **Pasto, intento 1** (blanco = láminas apiladas): E1 con 50 lecturas (Tabla 14). Luego falló el cenit y se movió el montaje.
 - **Pasto, intento 2** (blanco = solo la 15×30): E4 con 12, 11, 10, 9 y 12 V (Tabla 15, Fig. 19).
 - **Derivados:** `derivados/lab28_*.csv`. **Informe:** Sec. 9.8.

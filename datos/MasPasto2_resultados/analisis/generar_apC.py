@@ -304,9 +304,9 @@ m13 = rd("mediodia13_atenuador.csv"); m13c = m13[m13.corrida.str.startswith("con
 a11 = rd("tarde11_atenuador.csv"); a11 = a11[a11.ganancia_x == 0.5].iloc[0]
 cs = ["fy_555nm", "f6_640nm", "f7_690nm", "f8_745nm", "nir_855nm"]
 filas = [["Lámina de 2~mm a 3~mm del sensor (lámpara, 22 oct.)"] + [f(tp.loc[c, "T_d"], 3) for c in cs],
-         ["Atenuador de 3~mm, cielo de la tarde (11 nov., corrida 1)"] + [f(a11["T_" + c], 3) for c in cs],
-         ["Atenuador de 3~mm, cielo de la tarde (11 nov., corrida 2)"] + [f(a11["T2_" + c], 3) for c in cs],
-         ["Atenuador de 3~mm, sol directo (13 nov.)"] + [f(m13c["T_" + c], 3) for c in cs]]
+         ["Atenuador de 2~mm, cielo de la tarde (11 nov., corrida 1)"] + [f(a11["T_" + c], 3) for c in cs],
+         ["Atenuador de 2~mm, cielo de la tarde (11 nov., corrida 2)"] + [f(a11["T2_" + c], 3) for c in cs],
+         ["Atenuador de 2~mm, sol directo (13 nov.)"] + [f(m13c["T_" + c], 3) for c in cs]]
 tabla("tC_T", ["Difusor", "FY 555", "F6 640", "F7 690", "F8 745", "NIR 855"], filas, "lccccc",
       "Transmitancia de las piezas de PTFE (cociente de la señal con y sin la pieza).", "tab:C_T", tam="\\small")
 

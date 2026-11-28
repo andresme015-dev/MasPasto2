@@ -12,7 +12,7 @@
 | Nadir | Batería externa USB de 5 V | Debe entregar la corriente de la Pi y del LiDAR juntos; con una de menos corriente aparecen avisos de bajo voltaje y errores del LiDAR |
 | Cenit | ESP32 Dev Module | — |
 | Cenit | Espectrómetro AS7343 en tarjeta Adafruit | I²C del ESP32: SDA = GPIO21, SCL = GPIO22 |
-| Cenit | Caja de paredes internas negras con techo de PTFE de 2 mm al ras y bordes sellados; sensor a 2–3 cm bajo el techo; atenuador de PTFE de 3 mm encima | — |
+| Cenit | Caja de paredes internas negras con techo de PTFE de 2 mm al ras y bordes sellados; sensor a unos 3 mm bajo el techo; atenuador de la misma lámina de PTFE de 2 mm encima | — |
 | Cenit | Batería externa USB | Que no se apague por bajo consumo |
 | Opcional | MPU-6050 (0x69, AD0 a 3,3 V) y DS3231 (0x68) | Tienen programa de prueba; no quedaron integrados en el montaje final |
 

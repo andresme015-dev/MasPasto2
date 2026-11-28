@@ -266,7 +266,7 @@ a.set_xticks(range(5)); a.set_xticklabels(et, fontsize=7); a.set_ylim(0, 128); a
 a.text(4.45, 91.5, "límite (90 %)", fontsize=6.5, ha="right", va="bottom")
 a.set_ylabel("Canal más alto a 0,5× (% de la escala)"); a.set_title("b) Cenit con sol directo")
 a.grid(axis="x", visible=False)
-a.legend([bars[0], bars[4]], ["Sin atenuador", "Con atenuador (PTFE de 3 mm)"], loc="upper left", fontsize=6.5)
+a.legend([bars[0], bars[4]], ["Sin atenuador", "Con atenuador (PTFE de 2 mm)"], loc="upper left", fontsize=6.5)
 fig.tight_layout(w_pad=1.0)
 guarda(fig, "fig_saturacion.pdf")
 

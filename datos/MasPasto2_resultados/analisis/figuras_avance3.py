@@ -1,4 +1,5 @@
-"""Figuras y cifras de las pruebas de laboratorio del 28-29 oct 2026 (informe v3).
+"""Nota: las etiquetas 3mm/6mm de los nombres de archivo son de la adquisición; las láminas son de 2 mm (una o dos apiladas).
+Figuras y cifras de las pruebas de laboratorio del 28-29 oct 2026 (informe v3).
 Lee 2026-10-28_lab_PTFE_E1_E4/crudos y escribe en salidas/figuras_avance."""
 import os, numpy as np, pandas as pd, matplotlib
 matplotlib.use("Agg"); import matplotlib.pyplot as plt
@@ -18,9 +19,9 @@ E={"fondo3":eff("b3","s30"),"fondo6":eff("b6","n6"),"grosor":eff("n6","s30"),"ta
 print("== Efectos PTFE (%)"); [print(k,[round(v,1) for v in E[k]]) for k in E]
 wl=[w for *_,w in BANDS]; lab=[n for n,*_ in BANDS]
 fig,(a,b)=plt.subplots(1,2,figsize=(7.2,3.0),sharey=True)
-a.plot(wl,E["fondo3"],"-o",color=NA,lw=2,ms=5,label="Lámina de 3 mm"); a.plot(wl,E["fondo6"],"-s",color=AZ,lw=2,ms=5,label="Láminas apiladas (6 mm)")
+a.plot(wl,E["fondo3"],"-o",color=NA,lw=2,ms=5,label="Una lámina de 2 mm"); a.plot(wl,E["fondo6"],"-s",color=AZ,lw=2,ms=5,label="Dos láminas apiladas (4 mm)")
 a.set_title("(a) Fondo blanco frente a negro",fontsize=9,loc="left"); a.legend(fontsize=7.5,frameon=False,loc="upper left")
-b.plot(wl,E["grosor"],"-s",color=AZ,lw=2,ms=5,label="6 mm frente a 3 mm (fondo negro)"); b.plot(wl,E["tam"],"-o",color=NA,lw=2,ms=5,label="15×30 frente a 15×15 (3 mm, fondo negro)")
+b.plot(wl,E["grosor"],"-s",color=AZ,lw=2,ms=5,label="4 mm frente a 2 mm (fondo negro)"); b.plot(wl,E["tam"],"-o",color=NA,lw=2,ms=5,label="15×30 frente a 15×15 (2 mm, fondo negro)")
 b.set_title("(b) Grosor y tamaño",fontsize=9,loc="left"); b.legend(fontsize=7.5,frameon=False,loc="upper left")
 for ax in (a,b): ax.set_xticks(wl); ax.set_xticklabels([f"{n}\n{w}" for n,w in zip(lab,wl)],fontsize=7.5); ax.set_xlabel("Canal y pico (nm)"); ax.set_ylim(0,50)
 a.set_ylabel("Cambio de la lectura (%)")

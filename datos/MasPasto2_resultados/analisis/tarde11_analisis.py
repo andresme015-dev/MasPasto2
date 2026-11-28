@@ -385,7 +385,7 @@ luz = d.groupby('pasada').apply(lambda x: x['nir_855nm'].iloc[[0, -1]].tolist())
 print('  caida de la luz durante el barrido (NIR, primera y ultima lectura de cada pasada):', luz.to_dict())
 
 # =========================================================================================
-# 8. Atenuador (lamina de PTFE de 3 mm sobre la capsula del cenit)
+# 8. Atenuador (lamina de PTFE de 2 mm sobre la capsula del cenit)
 # =========================================================================================
 corr = {'sin_164405': 'con atenuador (rotulada mediodia_sin por error; descartada)',
         'sin_164500': 'sin atenuador', 'con_164600': 'con atenuador', 'sin2_164636': 'sin atenuador (repeticion)'}
