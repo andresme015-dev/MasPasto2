@@ -63,7 +63,7 @@ def qq(n): d=L(n).dropna(subset=["z_nir_855nm"]); return {c:(d["n_"+c]/d["z_"+c]
 P1={"s15":"registro_sensorA-B_ptfe_lab_solo15x15_20261028_230028","s30":"registro_sensorA-B_ptfe_lab_solo15x30_20260415_133639","n6":"registro_sensorA-B_ptfe_lab_ref_6mm_negro_20260415_133828","b6":"registro_sensorA-B_ptfe_lab_ref_6mm_blanco_20260415_134205","b3":"registro_sensorA-B_ptfe_lab_ref_3mm_blanco_20260415_134504"}
 P2={"s15":"registro_sensorA-B_ptfe_lab_solo15x15_20261028_235232","s30":"registro_sensorA-B_ptfe_lab_solo15x30_20261028_235427","n6":"registro_sensorA-B_ptfe_lab_ref_6mm_negro_20261028_235601","b6":"registro_sensorA-B_ptfe_lab_ref_6mm_blanco_20261028_235836","b3":"registro_sensorA-B_ptfe_lab_ref_3mm_blanco_20261029_000000"}
 M={k:{c:(qq(P1[k])[c]+qq(P2[k])[c])/2 for c in CH} for k in P1}
-comp=[("Fondo blanco frente a negro, 3 mm","b3","s30"),("Fondo blanco frente a negro, 6 mm","b6","n6"),("6 mm frente a 3 mm, fondo negro","n6","s30"),("6 mm frente a 3 mm, fondo blanco","b6","b3"),("15x30 frente a 15x15, 3 mm, fondo negro","s30","s15")]
+comp=[("Fondo blanco frente a negro, una lámina (2 mm)","b3","s30"),("Fondo blanco frente a negro, dos láminas (4 mm)","b6","n6"),("4 mm frente a 2 mm, fondo negro","n6","s30"),("4 mm frente a 2 mm, fondo blanco","b6","b3"),("15x30 frente a 15x15, 2 mm, fondo negro","s30","s15")]
 guarda(pd.DataFrame([{"comparacion":t,**{c:(M[a][c]/M[b][c]-1)*100 for c in CH}} for t,a,b in comp]).round(2),"lab28_ptfe_efectos_pct.csv")
 # 9. Llenado
 H={15:"registro_sensorA-B_ptfe_lab_ref_6mm_negro_20260415_133828",20:"registro_sensorA-B_ptfe_lab_llenado_20cm_20260415_135752",25:"registro_sensorA-B_ptfe_lab_llenado_25cm_20260415_140110"}
